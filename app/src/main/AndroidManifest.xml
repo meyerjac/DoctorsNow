@@ -11,21 +11,24 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".listOfPeopleActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.jacksonmeyer.sidekick.MainActivity"></meta-data>
+                android:value="com.example.jacksonmeyer.sidekick.MainActivity" />
         </activity>
         <activity android:name=".FormInfoActivity" />
         <activity android:name=".Splash">
             <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".FacebookLogin"></activity>
     </application>
 
 </manifest>
