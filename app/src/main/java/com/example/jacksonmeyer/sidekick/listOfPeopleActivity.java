@@ -21,6 +21,10 @@ public class listOfPeopleActivity extends AppCompatActivity {
             "Abe Lincoln", "Sophie LaCoste", "Brian Tesky", "Jess Bezos",
             "Aaron Box", "Jackson Meyer", "Juneau Meyer",
             "Megan Keough", "Amazing people", "Jesus",
+            "JB Straubel", "Dan keough", "Elon Musk", "Mother Teresa",
+            "Abe Lincoln", "Sophie LaCoste", "Brian Tesky", "Jess Bezos",
+            "Aaron Box", "Jackson Meyer", "Juneau Meyer",
+            "Megan Keough", "Amazing people", "Jesus",
             "JB Straubel", "Dan keough"};
 
     @Override
@@ -32,16 +36,19 @@ public class listOfPeopleActivity extends AppCompatActivity {
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, peopleList);
         mnamesListView.setAdapter(adapter);
 
-//        mnamesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                String people = ((TextView)view).getText().toString();
-//                Toast.makeText(listOfPeopleActivity.this, people, Toast.LENGTH_LONG).show();
-//            }
-//        });
+        mnamesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String people = ((TextView)view).getText().toString();
+                Toast.makeText(listOfPeopleActivity.this, people, Toast.LENGTH_LONG).show();
+            }
+        });
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
-        mnameTextView.setText("Hey " + name + " Here are the other people that are near you!");
+        String age = intent.getStringExtra("age");
+        String email = intent.getStringExtra("email");
+
+        mnameTextView.setText("Hey " + name + "with your contact email address of " + email +  "yo are " + age + " Here are the other people that are near you!");
     }
 }

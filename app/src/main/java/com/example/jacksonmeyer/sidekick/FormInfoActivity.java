@@ -29,12 +29,10 @@ public class FormInfoActivity extends AppCompatActivity {
 
         msecondPageButton.setOnClickListener(new View.OnClickListener() {
 
-
-
             @Override
             public void onClick(View v) {
-                if ((mpasswordInput.getText().toString() == "") || (mageInput.getText().toString()=="") ||
-                        (mnameInput.getText().toString()=="") || (memailInput.getText().toString()=="")) {
+                if ( (mpasswordInput.getText().toString().equals("")) || (mageInput.getText().toString().equals("")) ||
+                        (mnameInput.getText().toString().equals("")) || (memailInput.getText().toString().equals("")) ) {
                     Toast.makeText(FormInfoActivity.this, "please fill out all the text fields!", Toast.LENGTH_SHORT).show();
                 } else {
                     String password = mpasswordInput.getText().toString();
