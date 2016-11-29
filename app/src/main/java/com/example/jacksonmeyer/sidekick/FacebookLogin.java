@@ -20,12 +20,9 @@ public class FacebookLogin extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facebook_login);
         ButterKnife.bind(this);
-        Toast.makeText(FacebookLogin.this, "This isn't connected to facebook or Firebase yet, " +
-                "just click the button", Toast.LENGTH_LONG).show();
-
+        Toast.makeText(FacebookLogin.this, "This isn't connected to facebook or Firebase yet, " + "just click the button", Toast.LENGTH_LONG).show();
         mLoginButton.setOnClickListener(this);
     }
-
     @Override
     public void onClick(View v) {
         if (v == mLoginButton) {
@@ -33,7 +30,6 @@ public class FacebookLogin extends AppCompatActivity implements View.OnClickList
             startActivity(intent);
         }
     }
-
-    }
+}
 
 

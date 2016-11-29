@@ -32,10 +32,8 @@ public class listOfPeopleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_of_people);
         ButterKnife.bind(this);
-
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, peopleList);
         mNamesListView.setAdapter(adapter);
-
         mNamesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -43,12 +41,10 @@ public class listOfPeopleActivity extends AppCompatActivity {
                 Toast.makeText(listOfPeopleActivity.this, people, Toast.LENGTH_LONG).show();
             }
         });
-
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
         String age = intent.getStringExtra("age");
         String email = intent.getStringExtra("email");
-
         mNameTextView.setText("Hey " + name + "with your contact email address of: " + email +  ". " + "you are " + age + " years old " + " Here are the other people that are near you!");
     }
 }

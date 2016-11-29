@@ -7,9 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
     tools:context=".Splash"
-    android:theme="@style/Theme.AppCompat"
-    >
-
+    android:theme="@style/Theme.AppCompat">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -18,4 +16,5 @@
         android:id="@+id/ninja"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

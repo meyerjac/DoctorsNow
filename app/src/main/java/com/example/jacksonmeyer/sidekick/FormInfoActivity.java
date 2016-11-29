@@ -24,17 +24,13 @@ public class FormInfoActivity extends AppCompatActivity implements View.OnClickL
     @Bind(R.id.ageInput)
     EditText mAgeInput;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_info);
         ButterKnife.bind(this);
-
-
         mSecondPageButton.setOnClickListener(this);
     }
-
     @Override
     public void onClick(View v) {
         {

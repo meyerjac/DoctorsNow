@@ -14,17 +14,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.firstContinueButton)
     Button mFirstContinueButton;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
-
         mFirstContinueButton.setOnClickListener(this);
     }
-
     @Override
     public void onClick(View v) {
         if (v == mFirstContinueButton) {
