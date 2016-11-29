@@ -7,16 +7,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
-    private Button mfirstContinueButton;
+public class MainActivity extends AppCompatActivity {
+    @Bind(R.id.firstContinueButton) Button mfirstContinueButton;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        ButterKnife.bind(this);
+        ButterKnife.bind(this);
 
 
         mfirstContinueButton = (Button) findViewById(R.id.firstContinueButton);

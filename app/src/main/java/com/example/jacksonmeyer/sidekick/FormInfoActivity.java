@@ -8,18 +8,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class FormInfoActivity extends AppCompatActivity {
 
-    @Bind(R.id.secondPageButton)
-    Button msecondPageButton;
-    @Bind(R.id.nameInput)
-    EditText mnameInput;
-    @Bind(R.id.emailInput)
-    EditText memailInput;
-    @Bind(R.id.passwordInput)
-    EditText mpasswordInput;
-    @Bind(R.id.ageInput)
-    EditText mageInput;
+    @Bind(R.id.secondPageButton) Button msecondPageButton;
+    @Bind(R.id.nameInput) EditText mnameInput;
+    @Bind(R.id.emailInput) EditText memailInput;
+    @Bind(R.id.passwordInput) EditText mpasswordInput;
+    @Bind(R.id.ageInput) EditText mageInput;
 
 
     @Override

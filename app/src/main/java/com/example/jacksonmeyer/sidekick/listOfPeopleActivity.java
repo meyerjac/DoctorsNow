@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 
 public class listOfPeopleActivity extends AppCompatActivity {
     @Bind(R.id.nameTextView) TextView mnameTextView;
