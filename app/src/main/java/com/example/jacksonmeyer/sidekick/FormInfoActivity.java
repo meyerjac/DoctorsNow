@@ -11,13 +11,18 @@ import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class FormInfoActivity extends AppCompatActivity {
+public class FormInfoActivity extends AppCompatActivity implements View.OnClickListener {
 
-    @Bind(R.id.secondPageButton) Button mSecondPageButton;
-    @Bind(R.id.nameInput) EditText mNameInput;
-    @Bind(R.id.emailInput) EditText mEmailInput;
-    @Bind(R.id.passwordInput) EditText mPasswordInput;
-    @Bind(R.id.ageInput) EditText mAgeInput;
+    @Bind(R.id.secondPageButton)
+    Button mSecondPageButton;
+    @Bind(R.id.nameInput)
+    EditText mNameInput;
+    @Bind(R.id.emailInput)
+    EditText mEmailInput;
+    @Bind(R.id.passwordInput)
+    EditText mPasswordInput;
+    @Bind(R.id.ageInput)
+    EditText mAgeInput;
 
 
     @Override
@@ -27,12 +32,15 @@ public class FormInfoActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
-        mSecondPageButton.setOnClickListener(new View.OnClickListener() {
+        mSecondPageButton.setOnClickListener(this);
+    }
 
-            @Override
-            public void onClick(View v) {
-                if ( (mPasswordInput.getText().toString().equals("")) || (mAgeInput.getText().toString().equals("")) ||
-                        (mNameInput.getText().toString().equals("")) || (mEmailInput.getText().toString().equals("")) ) {
+    @Override
+    public void onClick(View v) {
+        {
+            if (v == mSecondPageButton) {
+                if ((mPasswordInput.getText().toString().equals("")) || (mAgeInput.getText().toString().equals("")) ||
+                        (mNameInput.getText().toString().equals("")) || (mEmailInput.getText().toString().equals(""))) {
                     Toast.makeText(FormInfoActivity.this, "please fill out all the text fields!", Toast.LENGTH_SHORT).show();
                 } else {
                     String password = mPasswordInput.getText().toString();
@@ -46,7 +54,9 @@ public class FormInfoActivity extends AppCompatActivity {
                     intent.putExtra("email", email);
                     startActivity(intent);
                 }
-            };
-        });
+            }
+            ;
+        }
+        ;
     };
 }
