@@ -4,7 +4,9 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.jacksonmeyer.sidekick.MainActivity">
+    tools:context="com.example.jacksonmeyer.sidekick.MainActivity"
+    android:theme="@style/Theme.AppCompat"
+    >
 
     <TextView
         android:layout_width="wrap_content"
@@ -15,7 +17,7 @@
         android:id="@+id/textView" />
 
     <ImageView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/introPageBackground"
         android:src="@drawable/background"
