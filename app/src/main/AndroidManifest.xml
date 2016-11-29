@@ -10,17 +10,19 @@
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
 
         <activity android:name=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.jacksonmeyer.sidekick.MainActivity">
-            </meta-data>
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".listOfPeopleActivity" />
+        <activity android:name=".listOfPeopleActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.jacksonmeyer.sidekick.MainActivity">
+            </meta-data>
+        </activity>
         <activity android:name=".FormInfoActivity"></activity>
     </application>
 
