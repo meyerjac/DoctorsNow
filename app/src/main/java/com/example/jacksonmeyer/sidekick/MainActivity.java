@@ -11,7 +11,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
-    @Bind(R.id.firstContinueButton) Button mfirstContinueButton;
+    @Bind(R.id.firstContinueButton) Button mFirstContinueButton;
 
 
 
@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
-        mfirstContinueButton = (Button) findViewById(R.id.firstContinueButton);
-        mfirstContinueButton.setOnClickListener(new View.OnClickListener() {
+        mFirstContinueButton = (Button) findViewById(R.id.firstContinueButton);
+        mFirstContinueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, FormInfoActivity.class);

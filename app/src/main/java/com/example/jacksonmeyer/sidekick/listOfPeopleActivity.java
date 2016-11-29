@@ -15,8 +15,8 @@ import butterknife.ButterKnife;
 
 
 public class listOfPeopleActivity extends AppCompatActivity {
-    @Bind(R.id.nameTextView) TextView mnameTextView;
-    @Bind(R.id.namesListView) ListView mnamesListView;
+    @Bind(R.id.nameTextView) TextView mNameTextView;
+    @Bind(R.id.namesListView) ListView mNamesListView;
     private String[] peopleList = new String[] {"Elon Musk", "Mother Teresa",
             "Abe Lincoln", "Sophie LaCoste", "Brian Tesky", "Jess Bezos",
             "Aaron Box", "Jackson Meyer", "Juneau Meyer",
@@ -34,9 +34,9 @@ public class listOfPeopleActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, peopleList);
-        mnamesListView.setAdapter(adapter);
+        mNamesListView.setAdapter(adapter);
 
-        mnamesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mNamesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String people = ((TextView)view).getText().toString();
@@ -49,6 +49,6 @@ public class listOfPeopleActivity extends AppCompatActivity {
         String age = intent.getStringExtra("age");
         String email = intent.getStringExtra("email");
 
-        mnameTextView.setText("Hey " + name + "with your contact email address of " + email +  "yo are " + age + " Here are the other people that are near you!");
+        mNameTextView.setText("Hey " + name + "with your contact email address of: " + email +  ". " + "you are " + age + " years old " + " Here are the other people that are near you!");
     }
 }

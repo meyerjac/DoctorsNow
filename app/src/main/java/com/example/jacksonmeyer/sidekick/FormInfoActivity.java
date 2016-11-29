@@ -13,11 +13,11 @@ import butterknife.ButterKnife;
 
 public class FormInfoActivity extends AppCompatActivity {
 
-    @Bind(R.id.secondPageButton) Button msecondPageButton;
-    @Bind(R.id.nameInput) EditText mnameInput;
-    @Bind(R.id.emailInput) EditText memailInput;
-    @Bind(R.id.passwordInput) EditText mpasswordInput;
-    @Bind(R.id.ageInput) EditText mageInput;
+    @Bind(R.id.secondPageButton) Button mSecondPageButton;
+    @Bind(R.id.nameInput) EditText mNameInput;
+    @Bind(R.id.emailInput) EditText mEmailInput;
+    @Bind(R.id.passwordInput) EditText mPasswordInput;
+    @Bind(R.id.ageInput) EditText mAgeInput;
 
 
     @Override
@@ -27,18 +27,18 @@ public class FormInfoActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
-        msecondPageButton.setOnClickListener(new View.OnClickListener() {
+        mSecondPageButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                if ( (mpasswordInput.getText().toString().equals("")) || (mageInput.getText().toString().equals("")) ||
-                        (mnameInput.getText().toString().equals("")) || (memailInput.getText().toString().equals("")) ) {
+                if ( (mPasswordInput.getText().toString().equals("")) || (mAgeInput.getText().toString().equals("")) ||
+                        (mNameInput.getText().toString().equals("")) || (mEmailInput.getText().toString().equals("")) ) {
                     Toast.makeText(FormInfoActivity.this, "please fill out all the text fields!", Toast.LENGTH_SHORT).show();
                 } else {
-                    String password = mpasswordInput.getText().toString();
-                    String age = mageInput.getText().toString();
-                    String name = mnameInput.getText().toString();
-                    String email = memailInput.getText().toString();
+                    String password = mPasswordInput.getText().toString();
+                    String age = mAgeInput.getText().toString();
+                    String name = mNameInput.getText().toString();
+                    String email = mEmailInput.getText().toString();
                     Intent intent = new Intent(FormInfoActivity.this, listOfPeopleActivity.class);
                     intent.putExtra("password", password);
                     intent.putExtra("age", age);
