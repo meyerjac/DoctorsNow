@@ -7,7 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
@@ -15,13 +17,15 @@ import butterknife.ButterKnife;
  */
 
 public class Splash extends AppCompatActivity {
+    @Bind(R.id.ninja) ImageView mNinja;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashh);
+        ButterKnife.bind(this);
 
-        final ImageView iv = (ImageView) findViewById(R.id.ninja);
+        final ImageView iv = mNinja;
         final Animation an = AnimationUtils.loadAnimation(getBaseContext(), R.anim.rotate);
         final Animation an2 = AnimationUtils.loadAnimation(getBaseContext(), R.anim.abc_fade_out);
 

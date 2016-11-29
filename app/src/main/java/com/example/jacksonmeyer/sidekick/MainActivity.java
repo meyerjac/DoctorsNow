@@ -10,9 +10,9 @@ import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
-    @Bind(R.id.firstContinueButton) Button mFirstContinueButton;
-
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    @Bind(R.id.firstContinueButton)
+    Button mFirstContinueButton;
 
 
     @Override
@@ -22,19 +22,17 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
-        mFirstContinueButton = (Button) findViewById(R.id.firstContinueButton);
-        mFirstContinueButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, FormInfoActivity.class);
-                startActivity(intent);
-                Toast.makeText(MainActivity.this, "Thanks for joining the team!", Toast.LENGTH_SHORT).show();
+        mFirstContinueButton.setOnClickListener(this);
+    }
 
-            }
-        });
+    @Override
+    public void onClick(View v) {
+        if (v == mFirstContinueButton) {
+            Intent intent = new Intent(MainActivity.this, FormInfoActivity.class);
+            startActivity(intent);
+            Toast.makeText(MainActivity.this, "Thanks for joining the team!", Toast.LENGTH_SHORT).show();
 
-
-
-
+        }
     }
 }
+
