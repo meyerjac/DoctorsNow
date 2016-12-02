@@ -1,6 +1,6 @@
 # _Application name: SIDEK!CK_
 
-#### _this application is a meet-up platform , 11/26/2016_
+#### _this application is a meet-up platformfor local events, 11/26/2016_
 
 #### By _**Jackson Meyer**_
 
