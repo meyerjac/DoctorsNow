@@ -26,10 +26,10 @@ public class GroupsActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Intent intent = getIntent();
-        String zip = intent.getStringExtra("zip");
-        mZipView.setText(zip);
+        String doctorNameGot = intent.getStringExtra("doctorName");
+        mZipView.setText(doctorNameGot);
 
-        getGroups(zip);
+        getGroups(doctorNameGot);
     }
 
     private void getGroups(String zip) {

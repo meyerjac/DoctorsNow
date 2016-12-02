@@ -45,13 +45,13 @@ public class FormInfoActivity extends AppCompatActivity implements View.OnClickL
                     String age = mAgeInput.getText().toString();
                     String name = mNameInput.getText().toString();
                     String email = mEmailInput.getText().toString();
-                    String zip = mZipInput.getText().toString();
+                    String doctorName = mZipInput.getText().toString();
                     Intent intent = new Intent(FormInfoActivity.this, GroupsActivity.class);
                     intent.putExtra("password", password);
                     intent.putExtra("age", age);
                     intent.putExtra("name", name);
+                    intent.putExtra("doctorName", doctorName);
                     intent.putExtra("email", email);
-                    intent.putExtra("zip", zip);
                     startActivity(intent);
                 }
             }
