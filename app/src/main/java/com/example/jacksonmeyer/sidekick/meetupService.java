@@ -7,7 +7,7 @@ import okhttp3.Callback;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-
+import se.akerfeldt.okhttp.signpost.SigningInterceptor;
 
 
 public class MeetupService {
@@ -15,9 +15,10 @@ public class MeetupService {
     public static void findGroups(String zip, Callback callback) {
         OkHttpClient client = new OkHttpClient.Builder().build();
 
+
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.MEETUP_BASE_URL).newBuilder();
-        urlBuilder.addQueryParameter(Constants.ZIP_QUERY_PARAMETER, zip);
         urlBuilder.addQueryParameter(Constants.API_QUERY_PARAMETER, Constants.APIKEY);
+        urlBuilder.addQueryParameter(Constants.ZIP_QUERY_PARAMETER, zip);
         String url = urlBuilder.build().toString();
         Log.d("log", "url: " + url);
 
