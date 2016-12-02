@@ -38,24 +38,24 @@
         android:layout_alignStart="@+id/introPageBackground" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Rules"
+        android:text="Find the right match"
         android:id="@+id/sidekickWelcomescreenRules"
         android:textStyle="normal"
         android:textSize="35sp"
         android:textColor="@color/colorPrimary"
         android:layout_below="@+id/sidekickWelcomeHeader"
-        android:layout_alignRight="@+id/textView"
-        android:layout_alignEnd="@+id/textView"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="1. Have Fun!! This is a service that should be exciting to use!"
+        android:text="1. this is an ppp that lets you checkout doctors"
         android:id="@+id/textView2"
         android:textColor="#ffffff"
         android:background="@color/colorAccent"
@@ -69,7 +69,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="2. Meet in a public place to meet your fellow sidekicks."
+        android:text="2. It allows people to access things that generally have been hard to come by."
         android:id="@+id/textView3"
         android:background="@color/colorAccent"
         android:textSize="25sp"
@@ -83,7 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="3. Do not discriminate under any circumstances."
+        android:text="3. Hope you fin the right doctor for your lifestyle."
         android:id="@+id/textView4"
         android:background="@color/colorAccent"
         android:textSize="25sp"

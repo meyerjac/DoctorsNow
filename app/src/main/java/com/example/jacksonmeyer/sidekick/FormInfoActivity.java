@@ -14,14 +14,10 @@ public class FormInfoActivity extends AppCompatActivity implements View.OnClickL
 
     @Bind(R.id.secondPageButton)
     Button mSecondPageButton;
-    @Bind(R.id.nameInput)
-    EditText mNameInput;
     @Bind(R.id.emailInput)
     EditText mEmailInput;
     @Bind(R.id.passwordInput)
     EditText mPasswordInput;
-    @Bind(R.id.ageInput)
-    EditText mAgeInput;
     @Bind(R.id.zipInput)
     EditText mZipInput;
 
@@ -36,20 +32,15 @@ public class FormInfoActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         {
             if (v == mSecondPageButton) {
-                if ((mPasswordInput.getText().toString().equals("")) || (mAgeInput.getText().toString().equals("")) ||
-                        (mNameInput.getText().toString().equals("")) || (mEmailInput.getText().toString().equals("")) ||
+                if ((mPasswordInput.getText().toString().equals("")) || (mEmailInput.getText().toString().equals("")) ||
                         (mZipInput.getText().toString().equals(""))) {
                     Toast.makeText(FormInfoActivity.this, "please fill out all the text fields!", Toast.LENGTH_SHORT).show();
                 } else {
                     String password = mPasswordInput.getText().toString();
-                    String age = mAgeInput.getText().toString();
-                    String name = mNameInput.getText().toString();
                     String email = mEmailInput.getText().toString();
                     String doctorName = mZipInput.getText().toString();
                     Intent intent = new Intent(FormInfoActivity.this, GroupsActivity.class);
                     intent.putExtra("password", password);
-                    intent.putExtra("age", age);
-                    intent.putExtra("name", name);
                     intent.putExtra("doctorName", doctorName);
                     intent.putExtra("email", email);
                     startActivity(intent);

@@ -20,34 +20,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Thankyou for joining the family! Please fill out the form below"
+        android:text="Please create and account: and search for a doctor"
         android:id="@+id/textView5"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Name"
-        android:textColor="@color/colorAccent"
-        android:id="@+id/nameInput"
-        android:layout_below="@+id/passwordInput"
-        android:layout_alignLeft="@+id/introPageBackground"
-        android:layout_alignStart="@+id/introPageBackground" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Age"
-        android:inputType="number"
-        android:textColor="@color/colorAccent"
-        android:ems="10"
-        android:id="@+id/ageInput"
-        android:layout_below="@+id/passwordInput"
-        android:layout_alignLeft="@+id/introPageBackground"
-        android:layout_alignStart="@+id/introPageBackground"
-        android:layout_marginTop="38dp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -61,18 +39,6 @@
         android:layout_alignLeft="@+id/introPageBackground"
         android:layout_alignStart="@+id/introPageBackground" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="password"
-        android:inputType="textPassword"
-        android:textColor="@color/colorAccent"
-        android:ems="10"
-        android:id="@+id/passwordInput"
-        android:layout_below="@+id/emailInput"
-        android:layout_alignLeft="@+id/introPageBackground"
-        android:layout_alignStart="@+id/introPageBackground" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -83,13 +49,30 @@
         android:layout_marginBottom="39dp" />
 
     <EditText
-        android:text="zip code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:textColor="@color/colorAccent"
+        android:ems="10"
+        android:id="@+id/passwordInput"
+        android:layout_below="@+id/emailInput"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:hint="Doctor Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/zipInput"
-        android:layout_below="@+id/ageInput"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="20dp"
+        android:background="@color/colorAccent"
+        android:paddingBottom="20dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        />
 
 </RelativeLayout>
 
