@@ -82,6 +82,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="39dp" />
 
+    <EditText
+        android:text="zip code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/zipInput"
+        android:layout_below="@+id/ageInput"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>
 
 

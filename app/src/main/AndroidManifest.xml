@@ -31,7 +31,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".FacebookLogin" />
-
+        <activity android:name=".GroupsActivity"></activity>
     </application>
 
 </manifest>
