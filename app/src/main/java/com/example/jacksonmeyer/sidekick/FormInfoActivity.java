@@ -18,8 +18,8 @@ public class FormInfoActivity extends AppCompatActivity implements View.OnClickL
     EditText mEmailInput;
     @Bind(R.id.passwordInput)
     EditText mPasswordInput;
-    @Bind(R.id.zipInput)
-    EditText mZipInput;
+    @Bind(R.id.nameInput)
+    EditText mNameInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,15 +33,15 @@ public class FormInfoActivity extends AppCompatActivity implements View.OnClickL
         {
             if (v == mSecondPageButton) {
                 if ((mPasswordInput.getText().toString().equals("")) || (mEmailInput.getText().toString().equals("")) ||
-                        (mZipInput.getText().toString().equals(""))) {
+                        (mNameInput.getText().toString().equals(""))) {
                     Toast.makeText(FormInfoActivity.this, "please fill out all the text fields!", Toast.LENGTH_SHORT).show();
                 } else {
                     String password = mPasswordInput.getText().toString();
                     String email = mEmailInput.getText().toString();
-                    String doctorName = mZipInput.getText().toString();
-                    Intent intent = new Intent(FormInfoActivity.this, DoctorActivity.class);
+                    String name = mNameInput.getText().toString();
+                    Intent intent = new Intent(FormInfoActivity.this, DoctorsActivity.class);
                     intent.putExtra("password", password);
-                    intent.putExtra("doctorName", doctorName);
+                    intent.putExtra("name", name);
                     intent.putExtra("email", email);
                     startActivity(intent);
                 }
