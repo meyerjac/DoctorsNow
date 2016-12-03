@@ -21,4 +21,15 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="28dp"
         android:id="@+id/zipView" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/zipView"
+        android:layout_alignLeft="@+id/zipView"
+        android:layout_alignStart="@+id/zipView"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/listView" />
 </RelativeLayout>
