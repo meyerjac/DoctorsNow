@@ -1,7 +1,5 @@
 package com.example.jacksonmeyer.sidekick;
 
-import java.util.ArrayList;
-
 public class Doctor {
     private String mFirstName;
     private String mLastName;
@@ -16,6 +14,7 @@ public class Doctor {
         this.mImage_url = mImage_url;
         this.mBio = mBio;
         this.mGender = mGender;
+        this.mAddress = mAddress;
     }
 
     public String getFirstName() {

@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -18,7 +20,9 @@ import okhttp3.Response;
 public class DoctorsActivity extends AppCompatActivity {
     @Bind(R.id.doctorNameTextView)
     TextView mDoctorNameTextView;
-    public static final String TAG = DoctorsActivity.class.getSimpleName();
+    @Bind(R.id.listView)
+    ListView mListView;
+    public static final String TAG = "doctors activity";
 
     public ArrayList<Doctor> mDoctors = new ArrayList<>();
 
@@ -47,19 +51,34 @@ public class DoctorsActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                try {
-                    String jsonData = response.body().string();
-                    if (response.isSuccessful()) {
-                        Log.v("hello", jsonData);
-                        mDoctors = doctorService.processResults(response);
+            public void onResponse(Call call, Response response) {
+                mDoctors = doctorService.processResults(response);
+
+
+                DoctorsActivity.this.runOnUiThread(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        String[] doctorNames = new String[mDoctors.size()];
+                        for (int i = 0; i < doctorNames.length; i++) {
+                            doctorNames[i] = mDoctors.get(i).getFirstName();
+                        }
+
+                        ArrayAdapter adapter = new ArrayAdapter(DoctorsActivity.this, android.R.layout.simple_list_item_1, doctorNames);
+                        mListView.setAdapter(adapter);
+
+                        for (Doctor doctor : mDoctors) {
+                            Log.d(TAG, "Name: " + doctor.getFirstName());
+                            Log.d(TAG, "Phone: " + doctor.getLastName());
+                            Log.d(TAG, "Website: " + doctor.getBio());
+                            Log.d(TAG, "Image url: " + doctor.getImage_url());
+                            Log.d(TAG, "gender: " + doctor.getGender());
+                            Log.d(TAG, "Address: " + doctor.getAddress());
+
+                        }
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                });
             }
-
-
         });
     }
 
