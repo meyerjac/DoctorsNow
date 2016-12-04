@@ -7,6 +7,7 @@ import android.util.Log;
 import android.widget.TextView;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -19,8 +20,10 @@ public class DoctorsActivity extends AppCompatActivity {
     TextView mDoctorNameTextView;
     public static final String TAG = DoctorsActivity.class.getSimpleName();
 
+    public ArrayList<Doctor> mDoctors = new ArrayList<>();
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctors);
         ButterKnife.bind(this);
@@ -30,7 +33,6 @@ public class DoctorsActivity extends AppCompatActivity {
         String name = intent.getStringExtra("name");
 
         mDoctorNameTextView.setText("Here are all the Doctors Named: " + name);
-
 
         getDoctors(name);
     }
@@ -48,7 +50,10 @@ public class DoctorsActivity extends AppCompatActivity {
             public void onResponse(Call call, Response response) throws IOException {
                 try {
                     String jsonData = response.body().string();
-                    Log.v("hello", jsonData);
+                    if (response.isSuccessful()) {
+                        Log.v("hello", jsonData);
+                        mDoctors = doctorService.processResults(response);
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

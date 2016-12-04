@@ -8,9 +8,9 @@ public class Doctor {
     private String mImage_url;
     private String mBio;
     private String mGender;
-    private ArrayList<String> mAddress = new ArrayList<>();
+    private String mAddress;
 
-    public Doctor(String mFirstName, String mLastName, String mImage_url, String mBio, String mGender, ArrayList<String> address) {
+    public Doctor(String mFirstName, String mLastName, String mImage_url, String mBio, String mGender, String mAddress) {
         this.mFirstName = mFirstName;
         this.mLastName = mLastName;
         this.mImage_url = mImage_url;
@@ -38,7 +38,7 @@ public class Doctor {
         return mGender;
     }
 
-    public ArrayList<String> getAddress() {
+    public String getAddress() {
         return mAddress;
     }
 

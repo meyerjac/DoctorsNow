@@ -48,13 +48,15 @@ public class DoctorService {
                 JSONArray doctorsJSON = betterDoctorJSON.getJSONArray("data");
                 for (int i = 0; i < doctorsJSON.length(); i++) {
                     JSONObject doctor = doctorsJSON.getJSONObject(i);
-                    JSONArray practices = doctor.getJSONArray("practices");
                     JSONObject profile = doctor.getJSONObject("profile");
                     String firstName = profile.getString("first_name");
-                    String LastName = profile.getString("first_name");
-                    String firstName = profile.getString("first_name");
+                    String lastName = profile.getString("last_name");
+                    String imageUrl = profile.getString("image_url");
+                    String bio = profile.getString("bio");
+                    String gender = profile.getString("gender");
+                    String address = profile.getString("address");
 
-                    Doctor doctorConstructor = new Doctor(firstName, lastName, imageUrl, bio, );
+                    Doctor doctorConstructor = new Doctor(firstName, lastName, imageUrl, bio, gender, address);
                     doctors.add(doctorConstructor);
                 }
             }
