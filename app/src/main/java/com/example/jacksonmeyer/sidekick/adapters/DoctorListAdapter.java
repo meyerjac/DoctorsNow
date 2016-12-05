@@ -43,12 +43,11 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Do
     }
 
     public class DoctorViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.doctorImageView)
-        ImageView mDoctorImageView;
-        @Bind(R.id.doctorNameTextView)
-        TextView mNameTextView;
-        @Bind(R.id.categoryTextView) TextView mCategoryTextView;
-        @Bind(R.id.ratingTextView) TextView mRatingTextView;
+        @Bind(R.id.doctorImageView) ImageView mDoctorImageView;
+        @Bind(R.id.doctorName) TextView mDoctorName;
+        @Bind(R.id.bio) TextView mBio;
+        @Bind(R.id.address) TextView mAddress;
+
         private Context mContext;
 
         public DoctorViewHolder(View itemView) {
@@ -58,9 +57,9 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Do
         }
 
         public void bindDoctor(Doctor doctor) {
-            mNameTextView.setText(doctor.getName());
-            mCategoryTextView.setText(doctor.getCategories().get(0));
-            mRatingTextView.setText("Rating: " + doctor.getRating() + "/5");
+            mDoctorName.setText(doctor.getName());
+            mBio.setText(doctor.getBio());
+            mAddress.setText(doctor.getAddress());
         }
     }
 }
