@@ -1,6 +1,9 @@
-package com.example.jacksonmeyer.sidekick;
+package com.example.jacksonmeyer.sidekick.services;
 
 import android.util.Log;
+
+import com.example.jacksonmeyer.sidekick.Constants;
+import com.example.jacksonmeyer.sidekick.models.Doctor;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -67,8 +70,9 @@ public class DoctorService {
                     String imageUrl = profile.getString("image_url");
                     String bio = profile.getString("bio");
                     String gender = profile.getString("gender");
+                        String Name = firstName + lastName;
 
-                    Doctor doctorConstructor = new Doctor(firstName, lastName, imageUrl, bio, gender, address);
+                    Doctor doctorConstructor = new Doctor(Name, imageUrl, bio, gender, Address);
                     doctors.add(doctorConstructor);
                 }
                 }
