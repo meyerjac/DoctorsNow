@@ -1,5 +1,4 @@
 package com.example.jacksonmeyer.sidekick;
-
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,14 +14,12 @@ public class FormInfoActivity extends AppCompatActivity implements View.OnClickL
 
     @Bind(R.id.secondPageButton)
     Button mSecondPageButton;
-    @Bind(R.id.nameInput)
-    EditText mNameInput;
     @Bind(R.id.emailInput)
     EditText mEmailInput;
     @Bind(R.id.passwordInput)
     EditText mPasswordInput;
-    @Bind(R.id.ageInput)
-    EditText mAgeInput;
+    @Bind(R.id.nameInput)
+    EditText mNameInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,24 +32,20 @@ public class FormInfoActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         {
             if (v == mSecondPageButton) {
-                if ((mPasswordInput.getText().toString().equals("")) || (mAgeInput.getText().toString().equals("")) ||
-                        (mNameInput.getText().toString().equals("")) || (mEmailInput.getText().toString().equals(""))) {
+                if ((mPasswordInput.getText().toString().equals("")) || (mEmailInput.getText().toString().equals("")) ||
+                        (mNameInput.getText().toString().equals(""))) {
                     Toast.makeText(FormInfoActivity.this, "please fill out all the text fields!", Toast.LENGTH_SHORT).show();
                 } else {
                     String password = mPasswordInput.getText().toString();
-                    String age = mAgeInput.getText().toString();
-                    String name = mNameInput.getText().toString();
                     String email = mEmailInput.getText().toString();
-                    Intent intent = new Intent(FormInfoActivity.this, listOfPeopleActivity.class);
+                    String name = mNameInput.getText().toString();
+                    Intent intent = new Intent(FormInfoActivity.this, DoctorsActivity.class);
                     intent.putExtra("password", password);
-                    intent.putExtra("age", age);
                     intent.putExtra("name", name);
                     intent.putExtra("email", email);
                     startActivity(intent);
                 }
-            }
-            ;
-        }
-        ;
+            };
+        };
     };
 }
