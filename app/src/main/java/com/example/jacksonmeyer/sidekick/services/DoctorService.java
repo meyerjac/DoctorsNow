@@ -70,7 +70,7 @@ public class DoctorService {
                     String imageUrl = profile.getString("image_url");
                     String bio = profile.getString("bio");
                     String gender = profile.getString("gender");
-                        String Name = firstName + lastName;
+                        String Name = firstName + " " + lastName;
 
                     Doctor doctorConstructor = new Doctor(Name, imageUrl, bio, gender, Address);
                     doctors.add(doctorConstructor);

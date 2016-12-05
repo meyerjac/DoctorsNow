@@ -24,7 +24,7 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class DoctorsActivity extends AppCompatActivity {
-    @Bind(R.id.recyclerView)
+    @Bind(R.id.RecyclerView)
     RecyclerView mRecyclerView;
     private DoctorListAdapter mAdapter;
 

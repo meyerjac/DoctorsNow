@@ -15,8 +15,9 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:background="#ffffff"
-        android:layout_height="100dp"
-        android:padding="10dp">
+        android:layout_height="150dp"
+        android:padding="10dp"
+        android:weightSum="1">
 
         <TextView
             android:layout_width="wrap_content"
@@ -28,25 +29,21 @@
             android:layout_alignParentStart="true"
             android:textStyle="italic"/>
 
+
+        <TextView
+            android:text="BIO"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/bio"
+            android:layout_weight="2" />
+
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="bio"
-            android:id="@+id/bio"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimary"/>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="Address"
-                android:id="@+id/address"
-                android:textColor="@color/colorAccent" />
-        </RelativeLayout>
+            android:layout_height="30dp"
+            android:text="Address"
+            android:id="@+id/address"
+            android:textColor="@color/colorAccent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp" />
     </LinearLayout>
 </LinearLayout>

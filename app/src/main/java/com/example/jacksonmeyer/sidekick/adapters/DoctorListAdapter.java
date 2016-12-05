@@ -47,7 +47,6 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Do
         @Bind(R.id.doctorName) TextView mDoctorName;
         @Bind(R.id.bio) TextView mBio;
         @Bind(R.id.address) TextView mAddress;
-
         private Context mContext;
 
         public DoctorViewHolder(View itemView) {
