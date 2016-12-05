@@ -62,7 +62,8 @@ public class DoctorsActivity extends AppCompatActivity {
                     public void run() {
                        mAdapter =  new DoctorListAdapter(getApplicationContext(), mDoctors);
                         mRecyclerView.setAdapter( mAdapter);
-                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(DoctorsActivity.this);
+                        RecyclerView.LayoutManager layoutManager =
+                                new LinearLayoutManager(DoctorsActivity.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
 
