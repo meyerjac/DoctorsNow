@@ -27,8 +27,16 @@
             android:layout_below="@+id/doctorName"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:textStyle="italic"/>
+            android:textStyle="italic"
+            android:textColorLink="@android:color/primary_text_light"
+            android:textSize="18sp" />
 
+
+        <TextView
+            android:text="website"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/website" />
 
         <TextView
             android:layout_width="match_parent"
@@ -37,13 +45,16 @@
             android:id="@+id/address"
             android:textColor="@color/colorAccent"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="15dp" />
+            android:layout_marginBottom="3dp"
+            android:clickable="false" />
 
         <TextView
             android:text="gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/gender" />
+            android:id="@+id/gender"
+            android:textColorHint="@android:color/primary_text_dark"
+            android:textSize="12sp" />
 
         <TextView
             android:text="BIO"

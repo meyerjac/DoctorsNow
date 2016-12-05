@@ -1,17 +1,13 @@
 package com.example.jacksonmeyer.sidekick.services;
 
 import android.util.Log;
-
 import com.example.jacksonmeyer.sidekick.Constants;
 import com.example.jacksonmeyer.sidekick.models.Doctor;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.util.ArrayList;
-
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.HttpUrl;
@@ -37,15 +33,12 @@ public class DoctorService {
                 .url(url)
                 .build();
 
-        Log.d("url", url);
         Call call = client.newCall(request);
         call.enqueue(callback);
-
     }
 
     public ArrayList<Doctor> processResults(Response response) {
         ArrayList<Doctor> doctors = new ArrayList<>();
-
         try {
             String jsonData = response.body().string();
             if (response.isSuccessful()) {
@@ -55,14 +48,14 @@ public class DoctorService {
                     JSONObject doctor = doctorsResults.getJSONObject(i);
                     JSONArray practices = doctor.getJSONArray("practices");
                     for(int j = 0; j < practices.length(); j++) {
+                        JSONObject aPractice = practices.getJSONObject(j);
                         JSONObject addressJSON = practices.getJSONObject(j).getJSONObject("visit_address");
                         String address = "";
                         String city = addressJSON.getString("city");
                         String state = addressJSON.getString("state");
                         String street = addressJSON.getString("street");
                         String zip = addressJSON.getString("zip");
-                        String Address = address + street + "\n" + city + "\n" + state + "\n" + zip;
-
+                        String Address = address + street + "\n" + city + ", " + state + " " + zip;
 
                     JSONObject profile = doctor.getJSONObject("profile");
                     String firstName = profile.getString("first_name");
@@ -70,11 +63,12 @@ public class DoctorService {
                     String imageUrl = profile.getString("image_url");
                     String bio = profile.getString("bio");
                     String gender = profile.getString("gender");
+                        String website = aPractice.getString("doctors_pagination_url");
                         String Name = firstName + " " + lastName;
 
-                    Doctor doctorConstructor = new Doctor(Name, imageUrl, bio, gender, Address);
+                    Doctor doctorConstructor = new Doctor(Name, imageUrl, bio, gender, Address, website);
                     doctors.add(doctorConstructor);
-                }
+                    }
                 }
 
             }

@@ -7,17 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.jacksonmeyer.sidekick.R;
 import com.example.jacksonmeyer.sidekick.models.Doctor;
 import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.DoctorViewHolder> {
+public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.DoctorViewHolder>  {
     private ArrayList<Doctor> mDoctors = new ArrayList<>();
     private Context mContext;
 
@@ -31,7 +28,9 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Do
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.doctor_list_item, parent, false);
         DoctorViewHolder viewHolder = new DoctorViewHolder(view);
         return viewHolder;
+
     }
+
 
     @Override
     public void onBindViewHolder(DoctorListAdapter.DoctorViewHolder holder, int position) {
@@ -49,6 +48,7 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Do
         @Bind(R.id.bio) TextView mBio;
         @Bind(R.id.address) TextView mAddress;
         @Bind(R.id.gender) TextView mGender;
+        @Bind(R.id.website) TextView mWebsite;
         private Context mContext;
 
         public DoctorViewHolder(View itemView) {
@@ -62,6 +62,7 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Do
             mBio.setText(doctor.getBio());
             mAddress.setText(doctor.getAddress());
             mGender.setText(doctor.getGender());
+            mWebsite.setText(doctor.getWebsite());
             Picasso.with(mContext).load(doctor.getImage_url()).into(mDoctorImageView);
         }
     }
