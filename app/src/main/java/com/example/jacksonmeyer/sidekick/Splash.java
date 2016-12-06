@@ -1,20 +1,13 @@
 package com.example.jacksonmeyer.sidekick;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.TextView;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
-
-/**
- * Created by jacksonmeyer on 11/28/16.
- */
 
 public class Splash extends AppCompatActivity {
     @Bind(R.id.ninja) ImageView mNinja;
@@ -24,7 +17,6 @@ public class Splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashh);
         ButterKnife.bind(this);
-
         final ImageView iv = mNinja;
         final Animation an = AnimationUtils.loadAnimation(getBaseContext(), R.anim.rotate);
         final Animation an2 = AnimationUtils.loadAnimation(getBaseContext(), R.anim.abc_fade_out);

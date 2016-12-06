@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -28,6 +27,7 @@ public class FormInfoActivity extends AppCompatActivity implements View.OnClickL
         ButterKnife.bind(this);
         mSecondPageButton.setOnClickListener(this);
     }
+
     @Override
     public void onClick(View v) {
         {

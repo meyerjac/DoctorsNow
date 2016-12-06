@@ -17,7 +17,6 @@ import butterknife.ButterKnife;
 public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.DoctorViewHolder>  {
     private ArrayList<Doctor> mDoctors = new ArrayList<>();
     private Context mContext;
-
     public DoctorListAdapter(Context context, ArrayList<Doctor> doctors) {
         mContext = context;
         mDoctors = doctors;
@@ -28,9 +27,7 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Do
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.doctor_list_item, parent, false);
         DoctorViewHolder viewHolder = new DoctorViewHolder(view);
         return viewHolder;
-
     }
-
 
     @Override
     public void onBindViewHolder(DoctorListAdapter.DoctorViewHolder holder, int position) {

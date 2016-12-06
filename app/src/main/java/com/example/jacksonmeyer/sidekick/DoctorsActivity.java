@@ -5,18 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
-
 import com.example.jacksonmeyer.sidekick.adapters.DoctorListAdapter;
 import com.example.jacksonmeyer.sidekick.models.Doctor;
 import com.example.jacksonmeyer.sidekick.services.DoctorService;
-
 import java.io.IOException;
 import java.util.ArrayList;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import okhttp3.Call;
@@ -27,7 +20,6 @@ public class DoctorsActivity extends AppCompatActivity {
     @Bind(R.id.RecyclerView)
     RecyclerView mRecyclerView;
     private DoctorListAdapter mAdapter;
-
     public ArrayList<Doctor> mDoctors = new ArrayList<>();
 
     @Override
@@ -36,10 +28,8 @@ public class DoctorsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_doctors);
         ButterKnife.bind(this);
 
-
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
-
         getDoctors(name);
     }
 
@@ -55,7 +45,6 @@ public class DoctorsActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) {
                 mDoctors = doctorService.processResults(response);
-
                 DoctorsActivity.this.runOnUiThread(new Runnable() {
 
                     @Override
