@@ -1,12 +1,12 @@
 # _Application name: SIDEK!CK_
 
-#### _this application is a meet-up platformfor local events, 11/26/2016_
+#### _this application is a platform for anybody to find local specialist doctors, 11/26/2016_
 
 #### By _**Jackson Meyer**_
 
 ## Description
 
-_The premise of this app is that the dating app sector is very competitive, and quite visceral and ugly, the meetup app and platforms are clunky and not super easy to use. This app will settle into a niche and bridge the gap, a relationship should be built on mutual interests and activities; thus, Sidek!ck was born. A spontaneous meetup platform: anything, anywhere, NOW_
+_The premise of this app is that it was initially going to be a dating app but I thought Doctors were more important and tha API was easier to use_
 
 ## Setup/Installation Requirements
 
