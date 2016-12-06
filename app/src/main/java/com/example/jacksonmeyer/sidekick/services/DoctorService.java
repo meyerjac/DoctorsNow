@@ -17,13 +17,8 @@ import okhttp3.Response;
 
 public class DoctorService {
 
-    private static final String TAG ="doctors Service";
-
     public static void findDoctors(String name, Callback callback) {
-
-
         OkHttpClient client = new OkHttpClient.Builder().build();
-
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.BETTER_DOCTOR_BASE_URL).newBuilder();
         urlBuilder.addQueryParameter(Constants.BETTER_DOCTOR_NAME_QUERY_PARAMETER, name);
         urlBuilder.addQueryParameter(Constants.API_QUERY_PARAMETER, Constants.APIKEY);
@@ -70,14 +65,12 @@ public class DoctorService {
                     doctors.add(doctorConstructor);
                     }
                 }
-
             }
         } catch (IOException e) {
             e.printStackTrace();
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        Log.d(TAG, "objects: " + doctors);
         return doctors;
     }
 }

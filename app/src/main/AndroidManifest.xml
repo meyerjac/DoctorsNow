@@ -27,7 +27,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".FacebookLogin" />
-        <activity android:name=".DoctorsActivity"></activity>
+        <activity android:name=".DoctorsActivity" />
+        <activity android:name=".JacksonContact"></activity>
     </application>
 
 </manifest>

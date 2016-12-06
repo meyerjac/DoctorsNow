@@ -11,10 +11,24 @@
         android:text="Login with Facebook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:background="@color/colorPrimary"
-        android:id="@+id/loginButton" />
+        android:id="@+id/loginButton"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="124dp" />
+
+    <Button
+        android:text="Contact Me"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/contactButton"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:background="@color/colorPrimary"
+         />
+
 </RelativeLayout>
