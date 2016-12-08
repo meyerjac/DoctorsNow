@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "15772709206",
+    "firebase_url": "https://sidekick-82b66.firebaseio.com",
+    "project_id": "sidekick-82b66",
+    "storage_bucket": "sidekick-82b66.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:15772709206:android:d7ecba9da3bf17c5",
+        "android_client_info": {
+          "package_name": "com.example.jacksonmeyer.sidekick"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "15772709206-5k553mj6av4suqu39qqbc3bpr4be3ads.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jacksonmeyer.sidekick",
+            "certificate_hash": "645B562BBAEC1CCB70DE7DBA37501860BA3FB18F"
+          }
+        },
+        {
+          "client_id": "15772709206-03fhfa75scjpauvnadud80uh995g4m4c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAp6jB9i-Ar6nCzBk60sKLrI-E5Vxbs24"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "15772709206-03fhfa75scjpauvnadud80uh995g4m4c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

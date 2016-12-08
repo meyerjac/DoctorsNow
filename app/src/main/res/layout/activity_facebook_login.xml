@@ -4,8 +4,8 @@
     android:id="@+id/activity_facebook_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorLoginPage"
-    tools:context="com.example.jacksonmeyer.sidekick.FacebookLogin">
+    android:background="@color/colorPrimaryDark"
+    tools:context="com.example.jacksonmeyer.sidekick.ui.FacebookLogin">
 
     <Button
         android:text="Login with Facebook"

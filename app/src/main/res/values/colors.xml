@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorPrimaryDark">#150000</color>
-    <color name="colorAccent">#9D0000</color>
-    <color name="colorLoginPage">#3b5998</color>
+    <color name="colorPrimary">#a0d6b4</color>
+    <color name="colorPrimaryDark">#317873</color>
+    <color name="colorPrimaryLight">#49796b</color>
+    <color name="colorAccent">#a3c1ad</color>
+    <color name="colorTextIcons">#150000</color>
+    <color name="colorPrimaryIcon">#3b5998</color>
+    <color name="colorPrimaryButtons">#5f9ea0</color>
 </resources>

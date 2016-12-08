@@ -1,4 +1,4 @@
-package com.example.jacksonmeyer.sidekick;
+package com.example.jacksonmeyer.sidekick.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import com.example.jacksonmeyer.sidekick.R;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -31,7 +34,7 @@ public class Splash extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 iv.startAnimation(an2);
                 finish();
-                Intent i = new Intent(Splash.this, FacebookLogin.class);
+                Intent i = new Intent(Splash.this, LoginActivity.class);
                 startActivity(i);
             }
 

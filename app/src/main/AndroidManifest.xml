@@ -11,24 +11,26 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".FormInfoActivity" />
-        <activity android:name=".Splash">
+        <activity android:name=".ui.FormInfoActivity" />
+        <activity android:name=".ui.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FacebookLogin" />
-        <activity android:name=".DoctorsActivity" />
-        <activity android:name=".JacksonContact"></activity>
+        <activity android:name=".ui.FacebookLogin" />
+        <activity android:name=".ui.DoctorsActivity" />
+        <activity android:name=".ui.JacksonContact" />
+        <activity android:name=".ui.CreateAccountActivity" />
+        <activity android:name=".ui.LoginActivity"></activity>
     </application>
 
 </manifest>
