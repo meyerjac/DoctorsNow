@@ -1,11 +1,10 @@
 package com.example.jacksonmeyer.sidekick.ui;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.jacksonmeyer.sidekick.R;
 
@@ -16,10 +15,6 @@ public class FormInfoActivity extends AppCompatActivity implements View.OnClickL
 
     @Bind(R.id.secondPageButton)
     Button mSecondPageButton;
-    @Bind(R.id.emailInput)
-    EditText mEmailInput;
-    @Bind(R.id.passwordInput)
-    EditText mPasswordInput;
     @Bind(R.id.nameInput)
     EditText mNameInput;
 
@@ -35,20 +30,12 @@ public class FormInfoActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         {
             if (v == mSecondPageButton) {
-                if ((mPasswordInput.getText().toString().equals("")) || (mEmailInput.getText().toString().equals("")) ||
-                        (mNameInput.getText().toString().equals(""))) {
-                    Toast.makeText(FormInfoActivity.this, "please fill out all the text fields!", Toast.LENGTH_SHORT).show();
-                } else {
-                    String password = mPasswordInput.getText().toString();
-                    String email = mEmailInput.getText().toString();
-                    String name = mNameInput.getText().toString();
-                    Intent intent = new Intent(FormInfoActivity.this, DoctorsActivity.class);
-                    intent.putExtra("password", password);
-                    intent.putExtra("name", name);
-                    intent.putExtra("email", email);
-                    startActivity(intent);
-                }
-            };
+                String name = mNameInput.getText().toString();
+                Intent intent = new Intent(FormInfoActivity.this, DoctorsActivity.class);
+                intent.putExtra("name", name);
+                startActivity(intent);
+            }
         };
-    };
+    }
 }
+

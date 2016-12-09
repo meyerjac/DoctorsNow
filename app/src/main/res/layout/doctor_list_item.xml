@@ -3,52 +3,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
+    android:background="@color/colorPrimaryLight"
     android:layout_height="wrap_content">
 
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="#eeeeee"
+        android:padding="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:weightSum="1">
+
     <ImageView
-        android:layout_width="112dp"
+        android:layout_width="100dp"
         android:layout_height="91dp"
         android:id="@+id/doctorImageView"
         android:src="@drawable/ninja"
         android:scaleType="centerCrop"/>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:background="#ffffff"
-        android:layout_height="200dp"
-        android:padding="5dp"
-        android:weightSum="1">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Doctor name"
             android:id="@+id/doctorName"
-            android:layout_below="@+id/doctorName"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:textStyle="italic"
             android:textColorLink="@android:color/primary_text_light"
-            android:textSize="18sp" />
-
-
-        <TextView
-            android:text="website"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/website"
-            android:clickable="?android:attr/windowFullscreen" />
+            android:textSize="18sp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/doctorImageView"
+            android:layout_toEndOf="@+id/doctorImageView"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:text="Address"
             android:id="@+id/address"
             android:textColor="@color/colorAccent"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="3dp"
-            android:clickable="false" />
+            android:clickable="false"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/doctorImageView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp" />
+
+        <TextView
+            android:text="BIO"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:id="@+id/bio"
+            android:layout_toRightOf="@+id/address"
+            android:layout_toEndOf="@+id/address"
+            android:layout_alignBottom="@+id/address" />
 
         <TextView
             android:text="gender"
@@ -56,14 +68,22 @@
             android:layout_height="wrap_content"
             android:id="@+id/gender"
             android:textColorHint="@android:color/primary_text_dark"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:layout_alignBottom="@+id/doctorName"
+            android:layout_toRightOf="@+id/doctorName"
+            android:layout_toEndOf="@+id/doctorName"
+            android:layout_marginLeft="46dp"
+            android:layout_marginStart="46dp" />
 
         <TextView
-            android:text="BIO"
+            android:text="website"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:id="@+id/bio"
-            android:layout_weight="2" />
+            android:layout_height="wrap_content"
+            android:id="@+id/website"
+            android:clickable="?android:attr/windowFullscreen"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/bio"
+            android:layout_alignEnd="@+id/bio" />
 
-    </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>

@@ -1,78 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_form_info"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:background="@color/colorPrimaryDark"
     tools:context="com.example.jacksonmeyer.sidekick.ui.FormInfoActivity">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/introPageBackground"
-        android:src="@drawable/background2"
-        android:scaleType="centerCrop"
-        android:layout_alignTop="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Please create and account: and search for a doctor"
+        android:text="Enter any of the fields and discover doctors from all over!"
         android:id="@+id/textView5"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="12dp"
+        />
 
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="email"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/colorAccent"
-        android:ems="10"
-        android:id="@+id/emailInput"
-        android:layout_below="@+id/textView5"
-        android:layout_alignLeft="@+id/introPageBackground"
-        android:layout_alignStart="@+id/introPageBackground" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="See what Portland is up to!?"
+        android:text="Find your doctors"
         android:id="@+id/secondPageButton"
+        android:layout_marginBottom="34dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="39dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="@color/colorPrimaryIcon"
+ />
 
     <EditText
+        android:hint="Enter a Medical Keyword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="password"
-        android:inputType="textPassword"
-        android:textColor="@color/colorAccent"
-        android:ems="10"
-        android:id="@+id/passwordInput"
-        android:layout_below="@+id/emailInput"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:hint="Doctor Name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/nameInput"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
+        android:id="@+id/CityInput"
         android:paddingTop="20dp"
         android:background="@color/colorAccent"
         android:paddingBottom="20dp"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
-        />
+        android:layout_above="@+id/secondPageButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="58dp" />
+
+    <EditText
+        android:hint="Enter Doctor Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameInput"
+        android:paddingTop="20dp"
+        android:background="@color/colorAccent"
+        android:paddingBottom="20dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:layout_marginTop="56dp"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameInput"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="105dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="26dp"
+        android:id="@+id/space" />
+
+    <TextView
+        android:text="AND/OR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Or"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
+        android:textSize="36sp"
+
+        android:layout_below="@+id/space"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="84dp"
+        android:layout_marginStart="84dp" />
 
 </RelativeLayout>
 

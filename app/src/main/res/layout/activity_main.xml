@@ -4,26 +4,14 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:background="@color/colorPrimaryDark"
     tools:context="com.example.jacksonmeyer.sidekick.ui.MainActivity"
     android:theme="@style/Theme.AppCompat">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/textView" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/introPageBackground"
-        android:src="@drawable/background"
-        android:scaleType="centerCrop"
-        android:layout_alignTop="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="match_parent"
@@ -69,7 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="2. It allows people to access things about many different doctors"
+        android:text="2. It allows people to access info about many different doctors"
         android:id="@+id/textView3"
         android:background="@color/colorAccent"
         android:textSize="25sp"
@@ -88,18 +76,25 @@
         android:background="@color/colorAccent"
         android:textSize="25sp"
         android:textColor="#ffffff"
-        android:layout_below="@+id/textView3"
-        android:layout_alignLeft="@+id/introPageBackground"
-        android:layout_alignStart="@+id/introPageBackground"
-        android:layout_marginTop="25dp"/>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Continue"
         android:id="@+id/firstContinueButton"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/sidekickWelcomescreenRules"
-        android:layout_alignStart="@+id/sidekickWelcomescreenRules" />
+        android:background="@color/colorTextIcons"
+        android:layout_marginBottom="14dp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="20dp"
+        android:paddingTop ="20dp"
+        android:paddingRight="20dp"
+
+
+        android:layout_above="@+id/sidekickWelcomescreenRules"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
