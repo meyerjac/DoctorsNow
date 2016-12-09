@@ -1,29 +1,30 @@
 package com.example.jacksonmeyer.sidekick.ui;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.jacksonmeyer.sidekick.Constants;
 import com.example.jacksonmeyer.sidekick.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class FormInfoActivity extends AppCompatActivity implements View.OnClickListener {
 
-
-    private SharedPreferences mSharedPreferences;
-    private SharedPreferences.Editor mEditor;
-
+//    private SharedPreferences mSharedPreferences;
+//    private SharedPreferences.Editor mEditor;
     private DatabaseReference mSearchedNameReference;
+    private ValueEventListener mSearchedNameReferenceListener;
 
     @Bind(R.id.secondPageButton)
     Button mSecondPageButton;
@@ -41,15 +42,38 @@ public class FormInfoActivity extends AppCompatActivity implements View.OnClickL
                 .getReference()
                 .child(Constants.FIREBASE_CHILD_SEARCHED_NAME);
 
+        mSearchedNameReferenceListener = mSearchedNameReference.addValueEventListener(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot nameSnapshot : dataSnapshot.getChildren()) {
+                    String name = nameSnapshot.getValue().toString();
+                    Log.d("Names updated", "name: " + name);
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_info);
         ButterKnife.bind(this);
 
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        mEditor = mSharedPreferences.edit();
+//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+//        mEditor = mSharedPreferences.edit();
 
 
         mSecondPageButton.setOnClickListener(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mSearchedNameReference.removeEventListener(mSearchedNameReferenceListener);
     }
 
     @Override
@@ -57,7 +81,7 @@ public class FormInfoActivity extends AppCompatActivity implements View.OnClickL
         if (v == mSecondPageButton) {
             String name = mNameInput.getText().toString();
             String query = mQueryInput.getText().toString();
-            addToSharedPreferences(query);
+//            addToSharedPreferences(query);
             saveNameToFirebase(name);
 
 
@@ -69,7 +93,6 @@ public class FormInfoActivity extends AppCompatActivity implements View.OnClickL
                 mQueryInput.setError("Keyword cannot be blank");
                 return;
             }
-
             Intent intent = new Intent(FormInfoActivity.this, DoctorsActivity.class);
             intent.putExtra("name", name);
             intent.putExtra("query", query);
@@ -80,9 +103,8 @@ public class FormInfoActivity extends AppCompatActivity implements View.OnClickL
     public void saveNameToFirebase(String name) {
         mSearchedNameReference.push().setValue(name);
     }
-
-    private void addToSharedPreferences(String query) {
-        mEditor.putString(Constants.PREFERENCES_QUERY_KEY, query).apply();
-    }
+//    private void addToSharedPreferences(String query) {
+//        mEditor.putString(Constants.PREFERENCES_QUERY_KEY, query).apply();
+//    }
 }
 

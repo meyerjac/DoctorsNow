@@ -7,7 +7,6 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
 import com.example.jacksonmeyer.sidekick.Constants;
 import com.example.jacksonmeyer.sidekick.R;
@@ -47,7 +46,10 @@ public class DoctorsActivity extends AppCompatActivity {
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mRecentQuery = mSharedPreferences.getString(Constants.PREFERENCES_QUERY_KEY, null);
-        Log.d("Shared Pref Location", mRecentQuery);
+        if (mRecentQuery != null) {
+            getDoctors(mQuery, mName);
+        }
+
     }
 
 
