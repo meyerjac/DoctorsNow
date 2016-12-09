@@ -1,11 +1,15 @@
 package com.example.jacksonmeyer.sidekick.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
+import com.example.jacksonmeyer.sidekick.Constants;
 import com.example.jacksonmeyer.sidekick.R;
 import com.example.jacksonmeyer.sidekick.adapters.DoctorListAdapter;
 import com.example.jacksonmeyer.sidekick.models.Doctor;
@@ -27,6 +31,8 @@ public class DoctorsActivity extends AppCompatActivity {
     private String mName;
     private String mQuery;
     public ArrayList<Doctor> mDoctors = new ArrayList<>();
+    private SharedPreferences mSharedPreferences;
+    private String mRecentQuery;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,7 +44,12 @@ public class DoctorsActivity extends AppCompatActivity {
         String mName = intent.getStringExtra("name");
         String mQuery = intent.getStringExtra("query");
         getDoctors(mName, mQuery);
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentQuery = mSharedPreferences.getString(Constants.PREFERENCES_QUERY_KEY, null);
+        Log.d("Shared Pref Location", mRecentQuery);
     }
+
 
     private void getDoctors(String name, String query) {
         final DoctorService doctorService= new DoctorService();
