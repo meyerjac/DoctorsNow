@@ -17,6 +17,11 @@ public class FormInfoActivity extends AppCompatActivity implements View.OnClickL
     Button mSecondPageButton;
     @Bind(R.id.nameInput)
     EditText mNameInput;
+    @Bind(R.id.queryInput)
+    EditText mQueryInput;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +36,10 @@ public class FormInfoActivity extends AppCompatActivity implements View.OnClickL
         {
             if (v == mSecondPageButton) {
                 String name = mNameInput.getText().toString();
+                String query = mQueryInput.getText().toString();
                 Intent intent = new Intent(FormInfoActivity.this, DoctorsActivity.class);
                 intent.putExtra("name", name);
+                intent.putExtra("query", query);
                 startActivity(intent);
             }
         };

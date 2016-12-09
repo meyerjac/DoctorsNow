@@ -19,11 +19,14 @@ import com.google.firebase.auth.FirebaseUser;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+import static com.example.jacksonmeyer.sidekick.R.id.firstContinueButton;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    @Bind(R.id.firstContinueButton)
+    @Bind(firstContinueButton)
     Button mFirstContinueButton;
     @Bind(R.id.textView3)
     TextView mTextView3;
+
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;

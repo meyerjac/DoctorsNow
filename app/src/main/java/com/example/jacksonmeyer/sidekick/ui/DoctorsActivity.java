@@ -22,6 +22,8 @@ public class DoctorsActivity extends AppCompatActivity {
     @Bind(R.id.RecyclerView)
     RecyclerView mRecyclerView;
     private DoctorListAdapter mAdapter;
+    private String mName;
+    private String mQuery;
     public ArrayList<Doctor> mDoctors = new ArrayList<>();
 
     @Override
@@ -31,13 +33,15 @@ public class DoctorsActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        getDoctors(name);
+        String mName = intent.getStringExtra("name");
+        String mQuery = intent.getStringExtra("query");
+
+        getDoctors(mName, mQuery);
     }
 
-    private void getDoctors(String name) {
+    private void getDoctors(String name, String query) {
         final DoctorService doctorService= new DoctorService();
-        doctorService.findDoctors(name, new Callback() {
+        doctorService.findDoctors(name, query, new Callback() {
 
             @Override
             public void onFailure(Call call, IOException e) {

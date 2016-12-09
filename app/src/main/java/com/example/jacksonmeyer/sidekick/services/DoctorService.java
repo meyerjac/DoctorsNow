@@ -1,13 +1,15 @@
 package com.example.jacksonmeyer.sidekick.services;
 
-import android.util.Log;
 import com.example.jacksonmeyer.sidekick.Constants;
 import com.example.jacksonmeyer.sidekick.models.Doctor;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.ArrayList;
+
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.HttpUrl;
@@ -17,10 +19,11 @@ import okhttp3.Response;
 
 public class DoctorService {
 
-    public static void findDoctors(String name, Callback callback) {
+    public static void findDoctors(String name, String query, Callback callback) {
         OkHttpClient client = new OkHttpClient.Builder().build();
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.BETTER_DOCTOR_BASE_URL).newBuilder();
         urlBuilder.addQueryParameter(Constants.BETTER_DOCTOR_NAME_QUERY_PARAMETER, name);
+        urlBuilder.addQueryParameter(Constants.BETTER_DOCTOR_QUERY_PARAMETER, query);
         urlBuilder.addQueryParameter(Constants.API_QUERY_PARAMETER, Constants.APIKEY);
         String url = urlBuilder.build().toString();
 

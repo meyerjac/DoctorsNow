@@ -50,17 +50,7 @@
             android:layout_below="@+id/doctorImageView"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginLeft="13dp"
-            android:layout_marginStart="13dp" />
-
-        <TextView
-            android:text="BIO"
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:id="@+id/bio"
-            android:layout_toRightOf="@+id/address"
-            android:layout_toEndOf="@+id/address"
-            android:layout_alignBottom="@+id/address" />
+             />
 
         <TextView
             android:text="gender"
@@ -79,11 +69,22 @@
             android:text="website"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#1111ee"
             android:id="@+id/website"
             android:clickable="?android:attr/windowFullscreen"
             android:layout_alignParentBottom="true"
             android:layout_alignRight="@+id/bio"
             android:layout_alignEnd="@+id/bio" />
+
+        <TextView
+            android:text="BIO"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:id="@+id/bio"
+
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/doctorImageView"
+            android:layout_toEndOf="@+id/doctorImageView" />
 
     </RelativeLayout>
 </LinearLayout>
