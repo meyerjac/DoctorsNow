@@ -1,8 +1,8 @@
 package com.example.jacksonmeyer.sidekick.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -10,8 +10,10 @@ import com.example.jacksonmeyer.sidekick.R;
 import com.example.jacksonmeyer.sidekick.adapters.DoctorListAdapter;
 import com.example.jacksonmeyer.sidekick.models.Doctor;
 import com.example.jacksonmeyer.sidekick.services.DoctorService;
+
 import java.io.IOException;
 import java.util.ArrayList;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import okhttp3.Call;
@@ -35,7 +37,6 @@ public class DoctorsActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String mName = intent.getStringExtra("name");
         String mQuery = intent.getStringExtra("query");
-
         getDoctors(mName, mQuery);
     }
 

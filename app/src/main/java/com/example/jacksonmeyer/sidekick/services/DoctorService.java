@@ -59,6 +59,11 @@ public class DoctorService {
                     String firstName = profile.getString("first_name");
                     String lastName = profile.getString("last_name");
                     String imageUrl = profile.getString("image_url");
+
+                        //trying to get null profile pictures to display default picture
+//                        if (imageUrl.equals(null)) {
+//                            imageUrl = ("http://www.vectorea.com/tvx_uploads/4/661-medical-icons.jpg").toString();
+//                        }
                     String bio = profile.getString("bio");
                     String gender = profile.getString("gender");
                         String website = aPractice.getString("doctors_pagination_url");

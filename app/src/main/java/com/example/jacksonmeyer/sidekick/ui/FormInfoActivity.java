@@ -6,12 +6,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.jacksonmeyer.sidekick.Constants;
 import com.example.jacksonmeyer.sidekick.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class FormInfoActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private DatabaseReference mSearchedNameReference;
 
     @Bind(R.id.secondPageButton)
     Button mSecondPageButton;
@@ -25,24 +30,45 @@ public class FormInfoActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        mSearchedNameReference = FirebaseDatabase
+                .getInstance()
+                .getReference()
+                .child(Constants.FIREBASE_CHILD_SEARCHED_NAME);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_info);
         ButterKnife.bind(this);
+
+
         mSecondPageButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        {
             if (v == mSecondPageButton) {
                 String name = mNameInput.getText().toString();
                 String query = mQueryInput.getText().toString();
+                saveNameToFirebase(name);
+
+                if (name.equals("")) {
+                    mNameInput.setError("Please enter a name");
+                    return;
+                }
+                if (query.equals("")) {
+                    mQueryInput.setError("Keyword cannot be blank");
+                    return;
+                }
+
                 Intent intent = new Intent(FormInfoActivity.this, DoctorsActivity.class);
                 intent.putExtra("name", name);
                 intent.putExtra("query", query);
                 startActivity(intent);
             }
-        };
+         }
+
+    public void saveNameToFirebase(String name) {
+        mSearchedNameReference.push().setValue(name);
     }
 }
 
