@@ -47,12 +47,12 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Do
 
 
     public class DoctorViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private static final int MAX_WIDTH = 200;
+        private static final int MAX_HEIGHT = 200;
         @Bind(R.id.doctorImageView) ImageView mDoctorImageView;
         @Bind(R.id.doctorName) TextView mDoctorName;
         @Bind(R.id.bio) TextView mBio;
-        @Bind(R.id.address) TextView mAddress;
         @Bind(R.id.gender) TextView mGender;
-        @Bind(R.id.website) TextView mWebsite;
 
         private Context mContext;
 
@@ -67,12 +67,16 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Do
         }
         public void bindDoctor(Doctor doctor) {
 
+            Picasso.with(mContext)
+                    .load(doctor.getImage_url())
+                    .resize(MAX_WIDTH, MAX_HEIGHT)
+                    .centerCrop()
+                    .into(mDoctorImageView);
+
+
             mDoctorName.setText(doctor.getName());
             mBio.setText(doctor.getBio());
-            mAddress.setText(doctor.getAddress());
             mGender.setText(doctor.getGender());
-            mWebsite.setText(doctor.getWebsite());
-            Picasso.with(mContext).load(doctor.getImage_url()).into(mDoctorImageView);
         }
 
             @Override

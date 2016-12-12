@@ -1,5 +1,6 @@
 package com.example.jacksonmeyer.sidekick.models;
 
+
 import org.parceler.Parcel;
 
 @Parcel
