@@ -23,7 +23,7 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class DoctorsActivity extends AppCompatActivity {
+public class DoctorListActivity extends AppCompatActivity {
     @Bind(R.id.RecyclerView)
     RecyclerView mRecyclerView;
     private DoctorListAdapter mAdapter;
@@ -65,14 +65,14 @@ public class DoctorsActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) {
                 mDoctors = doctorService.processResults(response);
-                DoctorsActivity.this.runOnUiThread(new Runnable() {
+                DoctorListActivity.this.runOnUiThread(new Runnable() {
 
                     @Override
                     public void run() {
                        mAdapter =  new DoctorListAdapter(getApplicationContext(), mDoctors);
                         mRecyclerView.setAdapter( mAdapter);
                         RecyclerView.LayoutManager layoutManager =
-                                new LinearLayoutManager(DoctorsActivity.this);
+                                new LinearLayoutManager(DoctorListActivity.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
 

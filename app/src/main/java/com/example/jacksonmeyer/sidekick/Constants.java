@@ -8,5 +8,5 @@ public class Constants {
     public static final String API_QUERY_PARAMETER = "user_key";
     public static final String PREFERENCES_QUERY_KEY = "queryInput";
     public static final String FIREBASE_CHILD_SEARCHED_NAME = "searchedName";
-    public static final String FIREBASE_CHILD_SEARCHED_Specialty = "searchedSpecialty";
+    public static final String FIREBASE_CHILD_DOCTORS = "doctors";
 }

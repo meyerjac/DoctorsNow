@@ -93,7 +93,7 @@ public class FormInfoActivity extends AppCompatActivity implements View.OnClickL
                 mQueryInput.setError("Keyword cannot be blank");
                 return;
             }
-            Intent intent = new Intent(FormInfoActivity.this, DoctorsActivity.class);
+            Intent intent = new Intent(FormInfoActivity.this, DoctorListActivity.class);
             intent.putExtra("name", name);
             intent.putExtra("query", query);
             startActivity(intent);

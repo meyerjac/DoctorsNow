@@ -1,45 +1,50 @@
 package com.example.jacksonmeyer.sidekick.models;
 
-public class Doctor {
-    private String mName;
-    private String mImage_url;
-    private String mBio;
-    private String mGender;
-    private String mAddress;
-    private String mWebsite;
+import org.parceler.Parcel;
 
-    public Doctor(String mName, String mImage_url, String mBio, String mGender, String mAddress, String mWebsite) {
-        this.mName = mName;
-        this.mImage_url = mImage_url;
-        this.mBio = mBio;
-        this.mGender = mGender;
-        this.mAddress = mAddress;
-        this.mWebsite =mWebsite;
+@Parcel
+public class Doctor {
+     String Name;
+     String Image_url;
+     String Bio;
+     String Gender;
+     String Address;
+     String Website;
+
+    public Doctor() {}
+
+    public Doctor(String Name, String Image_url, String Bio, String Gender, String Address, String Website) {
+        this.Name = Name;
+        this.Image_url = Image_url;
+        this.Bio = Bio;
+        this.Gender = Gender;
+        this.Address = Address;
+        this.Website =Website;
 
     }
 
     public String getName() {
-        return mName;
+        return Name;
     }
 
     public String getImage_url() {
-        return mImage_url;
+        return Image_url;
     }
 
     public String getBio() {
-        return mBio;
+        return Bio;
     }
 
     public String getGender() {
-        return mGender;
+        return Gender;
     }
 
     public String getAddress() {
-        return mAddress;
+        return Address;
     }
 
     public String getWebsite() {
-        return mWebsite;
+        return Website;
     }
 
 }

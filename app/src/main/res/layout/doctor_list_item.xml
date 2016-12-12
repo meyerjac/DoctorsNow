@@ -55,7 +55,7 @@
         <TextView
             android:text="gender"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="20dp"
             android:id="@+id/gender"
             android:textColorHint="@android:color/primary_text_dark"
             android:textSize="12sp"
@@ -63,7 +63,8 @@
             android:layout_toRightOf="@+id/doctorName"
             android:layout_toEndOf="@+id/doctorName"
             android:layout_marginLeft="46dp"
-            android:layout_marginStart="46dp" />
+            android:layout_marginStart="46dp"
+            android:layout_alignParentTop="true" />
 
         <TextView
             android:text="website"
@@ -72,9 +73,7 @@
             android:textColor="#1111ee"
             android:id="@+id/website"
             android:clickable="?android:attr/windowFullscreen"
-            android:layout_alignParentBottom="true"
-            android:layout_alignRight="@+id/bio"
-            android:layout_alignEnd="@+id/bio" />
+            android:layout_alignParentBottom="true" />
 
         <TextView
             android:text="BIO"
