@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button mFirstContinueButton;
     @Bind(R.id.textView3)
     TextView mTextView3;
+    @Bind(R.id.savedDoctorsButton) Button mSavedDoctorsButton;
+
 
 
     private FirebaseAuth mAuth;
@@ -37,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         mFirstContinueButton.setOnClickListener(this);
+        mSavedDoctorsButton.setOnClickListener(this);
+
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -59,7 +63,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(MainActivity.this, FormInfoActivity.class);
             startActivity(intent);
             Toast.makeText(MainActivity.this, "Thanks for joining the team!", Toast.LENGTH_SHORT).show();
+        }  if (v == mSavedDoctorsButton) {
+            Intent intent = new Intent(MainActivity.this, SavedDoctorListActivity.class);
+            startActivity(intent);
         }
+
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
