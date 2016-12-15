@@ -5,13 +5,13 @@
     android:id="@+id/splashhed"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="#dd0000"
     tools:context=".ui.Splash"
-    android:theme="@style/Theme.AppCompat">
+   >
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
         app:srcCompat="@drawable/ninja"
         android:id="@+id/ninja"
         android:layout_centerVertical="true"

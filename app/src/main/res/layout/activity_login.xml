@@ -52,13 +52,13 @@ android:background="@color/colorPrimary">
         android:text="Log in"
         android:background="@color/colorAccent"
         android:layout_marginTop="15dp"
-        android:textColor="@color/colorTextIcons" />
+        android:textColor="@color/colorIcons" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:textColor="@color/colorTextIcons"
+        android:textColor="@color/colorIcons"
         android:textStyle="bold"
         android:textSize="15sp"
         android:text="Don't have an account? Sign up here!"

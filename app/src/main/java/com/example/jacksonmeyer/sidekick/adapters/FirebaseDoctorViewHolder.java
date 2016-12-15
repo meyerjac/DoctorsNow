@@ -1,13 +1,11 @@
 package com.example.jacksonmeyer.sidekick.adapters;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.jacksonmeyer.sidekick.Constants;
 import com.example.jacksonmeyer.sidekick.R;
 import com.example.jacksonmeyer.sidekick.models.Doctor;
@@ -18,12 +16,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
-
 import org.parceler.Parcels;
-
 import java.util.ArrayList;
-
-import static com.example.jacksonmeyer.sidekick.R.id.genderTextView;
 
 public class FirebaseDoctorViewHolder  extends RecyclerView.ViewHolder implements View.OnClickListener {
         private static final int MAX_WIDTH = 200;
@@ -43,7 +37,7 @@ public class FirebaseDoctorViewHolder  extends RecyclerView.ViewHolder implement
         ImageView doctorImageView = (ImageView) mView.findViewById(R.id.doctorImageView);
         TextView nameTextView = (TextView) mView.findViewById(R.id.doctorNameTextView);
         TextView bioTextView = (TextView) mView.findViewById(R.id.bioTextView);
-        TextView ratingTextView = (TextView) mView.findViewById(genderTextView);
+        TextView genderTextView = (TextView) mView.findViewById(R.id.genderTextView);
 
         Picasso.with(mContext)
                 .load(doctor.getImage_url())
@@ -52,7 +46,8 @@ public class FirebaseDoctorViewHolder  extends RecyclerView.ViewHolder implement
                 .into(doctorImageView);
 
         nameTextView.setText(doctor.getName());
-        bioTextView.setText(doctor.getGender());
+        bioTextView.setText(doctor.getBio());
+        genderTextView.setText(doctor.getGender());
     }
 
     @Override
