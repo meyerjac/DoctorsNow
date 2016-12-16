@@ -20,7 +20,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="182dp"
-                android:background="@android:color/white"
+                android:background="#ffffff"
                 android:paddingTop="20dp"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
@@ -62,7 +62,8 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                >
 
                 <LinearLayout
                     android:orientation="vertical"
@@ -83,7 +84,7 @@
                         android:id="@+id/websiteTextView"
                         android:drawableLeft="@drawable/ic_exit_to_app_white_24dp"
                         android:drawablePadding="4dp"
-                        android:textColor="@color/colorIcons"
+                        android:textColor="@color/colorPrimaryDark"
                         android:textSize="15sp"
                         android:textStyle="bold"
                         android:layout_marginBottom="10dp"
@@ -97,7 +98,7 @@
                         android:drawableLeft="@drawable/ic_directions_white_24dp"
                         android:drawablePadding="4dp"
                         android:id="@+id/addressTextView"
-                        android:textColor="@color/colorIcons"
+                        android:textColor="@color/colorPrimaryDark"
                         android:textSize="15sp"
                         android:textStyle="bold"
                         android:layout_marginBottom="10dp"
@@ -111,8 +112,8 @@
                     android:text="Save Doctor"
                     android:id="@+id/saveDoctorButton"
                     android:layout_alignParentBottom="true"
-                    android:background="@color/colorPrimaryDark"
-                    android:textColor="@color/colorIcons"
+                    android:background="@color/colorAccent"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="15sp" />
             </RelativeLayout>
         </LinearLayout>

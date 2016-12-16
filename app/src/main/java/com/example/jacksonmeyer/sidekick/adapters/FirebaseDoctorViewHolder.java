@@ -3,9 +3,10 @@ package com.example.jacksonmeyer.sidekick.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.example.jacksonmeyer.sidekick.Constants;
 import com.example.jacksonmeyer.sidekick.R;
 import com.example.jacksonmeyer.sidekick.models.Doctor;
@@ -15,16 +16,22 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Picasso;
+
 import org.parceler.Parcels;
+
 import java.util.ArrayList;
 
+import butterknife.Bind;
+
 public class FirebaseDoctorViewHolder  extends RecyclerView.ViewHolder implements View.OnClickListener {
+    @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
+    public static final String TAG = "TAG";
         private static final int MAX_WIDTH = 200;
         private static final int MAX_HEIGHT = 200;
 
         View mView;
         Context mContext;
+    final ArrayList<Doctor> doctor = new ArrayList<>();
 
         public FirebaseDoctorViewHolder(View itemView) {
         super(itemView);
@@ -33,21 +40,30 @@ public class FirebaseDoctorViewHolder  extends RecyclerView.ViewHolder implement
         itemView.setOnClickListener(this);
     }
 
+    public ArrayList<Doctor> getDoctor() {
+        return doctor;
+    }
+
     public void bindDoctor(Doctor doctor) {
-        ImageView doctorImageView = (ImageView) mView.findViewById(R.id.doctorImageView);
+        Log.d(TAG, "bindDoctor: " + doctor);
         TextView nameTextView = (TextView) mView.findViewById(R.id.doctorNameTextView);
         TextView bioTextView = (TextView) mView.findViewById(R.id.bioTextView);
         TextView genderTextView = (TextView) mView.findViewById(R.id.genderTextView);
 
-        Picasso.with(mContext)
-                .load(doctor.getImage_url())
-                .resize(MAX_WIDTH, MAX_HEIGHT)
-                .centerCrop()
-                .into(doctorImageView);
+
+
+
+        Log.d(TAG, "doctorname" + doctor.getName());
 
         nameTextView.setText(doctor.getName());
+
         bioTextView.setText(doctor.getBio());
         genderTextView.setText(doctor.getGender());
+//        Picasso.with(mContext)
+//                .load(doctor.getImage_url())
+//                .resize(MAX_WIDTH, MAX_HEIGHT)
+//                .into(doctorImageView);
+//        Log.d(TAG, "bindDoctor: " + doctor);
     }
 
     @Override
@@ -60,6 +76,7 @@ public class FirebaseDoctorViewHolder  extends RecyclerView.ViewHolder implement
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     doctors.add(snapshot.getValue(Doctor.class));
+
                 }
 
                 int itemPosition = getLayoutPosition();
@@ -67,6 +84,7 @@ public class FirebaseDoctorViewHolder  extends RecyclerView.ViewHolder implement
                 Intent intent = new Intent(mContext, DoctorDetailActivity.class);
                 intent.putExtra("position", itemPosition + "");
                 intent.putExtra("doctors", Parcels.wrap(doctors));
+                Log.d(TAG, "onDataChange: " + doctors);
 
                 mContext.startActivity(intent);
             }

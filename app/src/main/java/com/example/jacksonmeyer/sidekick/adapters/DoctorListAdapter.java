@@ -19,6 +19,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.DoctorViewHolder>  {
+    public static final String TAG = "TAG";
     private ArrayList<Doctor> mDoctors = new ArrayList<>();
     private Context mContext;
     public DoctorListAdapter(Context context, ArrayList<Doctor> doctors) {

@@ -24,7 +24,8 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class DoctorListActivity extends AppCompatActivity {
-    @Bind(R.id.RecyclerView)
+    public static final String TAG = "TAG";
+    @Bind(R.id.recyclerView)
     RecyclerView mRecyclerView;
     private DoctorListAdapter mAdapter;
     private String mName;

@@ -80,13 +80,14 @@ android:background="@color/colorPrimary">
         android:text="Sign up"
         android:background="@color/colorAccent"
         android:layout_marginTop="15dp"
-        android:textColor="@color/colorIcons" />
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:textColor="@color/colorIcons"
+        android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
         android:textSize="15sp"
         android:text="Already have an account? Log in here!"

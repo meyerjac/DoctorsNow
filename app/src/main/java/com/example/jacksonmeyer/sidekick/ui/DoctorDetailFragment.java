@@ -22,8 +22,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class DoctorDetailFragment extends Fragment implements View.OnClickListener{
-    private static final int MAX_WIDTH = 400;
-    private static final int MAX_HEIGHT = 300;
+    private static final int MAX_WIDTH = 300;
+    private static final int MAX_HEIGHT = 200;
     @Bind(R.id.doctorImageView) ImageView mImageLabel;
     @Bind(R.id.doctorNameTextView) TextView mNameLabel;
     @Bind(R.id.bioTextView) TextView mBioLabel;

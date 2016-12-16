@@ -19,14 +19,15 @@ import com.google.firebase.auth.FirebaseUser;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-import static com.example.jacksonmeyer.sidekick.R.id.firstContinueButton;
+import static com.example.jacksonmeyer.sidekick.R.id.findDoctorsButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    @Bind(firstContinueButton)
+    @Bind(findDoctorsButton)
     Button mFirstContinueButton;
     @Bind(R.id.textView3)
     TextView mTextView3;
-    @Bind(R.id.savedDoctorsButton) Button mSavedDoctorsButton;
+    @Bind(R.id.savedDoctorsButton)
+    Button mSavedDoctorsButton;
 
 
 
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
             Toast.makeText(MainActivity.this, "Thanks for joining the team!", Toast.LENGTH_SHORT).show();
         }  if (v == mSavedDoctorsButton) {
+            Toast.makeText(MainActivity.this, "saved doctor list here", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(MainActivity.this, SavedDoctorListActivity.class);
             startActivity(intent);
         }

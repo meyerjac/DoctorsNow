@@ -8,7 +8,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorPrimary"
     tools:context="com.example.jacksonmeyer.sidekick.ui.FormInfoActivity">
 
 
@@ -16,8 +16,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Enter any of the fields and discover doctors from all over!"
+        android:text="fill the form and discover doctors from all over!"
         android:id="@+id/textView5"
+        android:textSize="25dp"
         android:layout_marginTop="12dp"
         />
 
@@ -61,6 +62,7 @@
         android:paddingBottom="20dp"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
+        android:textSize="20dp"
         android:layout_marginTop="56dp"
         android:layout_below="@+id/textView5"
         android:layout_alignParentRight="true"

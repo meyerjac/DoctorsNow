@@ -3,7 +3,6 @@ package com.example.jacksonmeyer.sidekick.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,7 +47,7 @@ public class FormInfoActivity extends AppCompatActivity implements View.OnClickL
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot nameSnapshot : dataSnapshot.getChildren()) {
                     String name = nameSnapshot.getValue().toString();
-                    Log.d("Names updated", "name: " + name);
+//                    Log.d("Names updated", "name: " + name);
                 }
             }
             @Override

@@ -2,16 +2,19 @@ package com.example.jacksonmeyer.sidekick.ui;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jacksonmeyer.sidekick.R;
+import com.example.jacksonmeyer.sidekick.util.Android_Gesture_Detector;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -21,15 +24,12 @@ import com.google.firebase.auth.FirebaseUser;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
-    public static final String TAG = LoginActivity.class.getSimpleName();
-
-    @Bind(R.id.passwordLoginButton)
-    Button mPasswordLoginButton;
+public class LoginActivity extends AppCompatActivity implements SensorEventListener {
+    private GestureDetector mGestureDetector;
     @Bind(R.id.emailEditText)
     EditText mEmailEditText;
     @Bind(R.id.passwordEditText) EditText mPasswordEditText;
-    @Bind(R.id.newAccountTextView) TextView mNewAccountTextView;
+
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -57,9 +57,29 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         };
 
-        mNewAccountTextView.setOnClickListener(this);
-        mPasswordLoginButton.setOnClickListener(this);
+        Android_Gesture_Detector custom_gesture_detector = new Android_Gesture_Detector() {
+            @Override
+            public void onSwipeUp() {
+                loginWithPassword();
+            }
+
+            public void onSwipeDown() {
+                Intent intent = new Intent(LoginActivity.this, CreateAccountActivity.class);
+                startActivity(intent);
+                finish();
+            }
+
+            public void onSwipeRight() {
+
+            }
+
+            public void onSwipeLeft() {
+            }
+        };
+        mGestureDetector = new GestureDetector(this, custom_gesture_detector);
+
     }
+
 
     private void createAuthProgressDialog() {
         mAuthProgressDialog = new ProgressDialog(this);
@@ -68,16 +88,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mAuthProgressDialog.setCancelable(true);
     }
 
-    @Override
-    public void onClick(View view) {
-        if (view == mNewAccountTextView) {
-            Intent intent = new Intent(LoginActivity.this, CreateAccountActivity.class);
-            startActivity(intent);
-            finish();
-        }  if (view == mPasswordLoginButton) {
-            loginWithPassword();
-        }
-    }
 
     private void loginWithPassword() {
         String email = mEmailEditText.getText().toString().trim();
@@ -130,6 +140,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
 
+    @Override
+    public void onSensorChanged(SensorEvent event) {
 
+    }
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+            mGestureDetector.onTouchEvent(event);
+            return super.onTouchEvent(event);
+        }
 }

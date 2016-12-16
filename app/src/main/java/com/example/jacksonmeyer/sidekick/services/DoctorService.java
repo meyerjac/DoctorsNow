@@ -19,6 +19,8 @@ import okhttp3.Response;
 
 public class DoctorService {
 
+    private static final String TAG = "error";
+
     public static void findDoctors(String name, String query, Callback callback) {
         OkHttpClient client = new OkHttpClient.Builder().build();
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.BETTER_DOCTOR_BASE_URL).newBuilder();
@@ -38,14 +40,14 @@ public class DoctorService {
     public ArrayList<Doctor> processResults(Response response) {
         ArrayList<Doctor> doctors = new ArrayList<>();
         try {
-            String jsonData = response.body().string();
             if (response.isSuccessful()) {
+                String jsonData = response.body().string();
                 JSONObject results = new JSONObject(jsonData);
                 JSONArray doctorsResults = results.getJSONArray("data");
                 for (int i = 0; i < doctorsResults.length(); i++) {
                     JSONObject doctor = doctorsResults.getJSONObject(i);
                     JSONArray practices = doctor.getJSONArray("practices");
-                    for(int j = 0; j < practices.length(); j++) {
+                    for (int j = 0; j < 1; j++) {
                         JSONObject aPractice = practices.getJSONObject(j);
                         JSONObject addressJSON = practices.getJSONObject(j).getJSONObject("visit_address");
                         String address = "";
@@ -64,9 +66,9 @@ public class DoctorService {
 //                        if (imageUrl.equals(null)) {
 //                            imageUrl = ("http://www.vectorea.com/tvx_uploads/4/661-medical-icons.jpg").toString();
 //                        }
-                    String bio = profile.getString("bio");
-                    String gender = profile.getString("gender");
-                        String website = aPractice.getString("doctors_pagination_url");
+                    String bio = profile.optString("bio");
+                    String gender = profile.optString("gender");
+                        String website = aPractice.optString("doctors_pagination_url");
                         String Name = firstName + " " + lastName;
 
                     Doctor doctorConstructor = new Doctor(Name, imageUrl, bio, gender, Address, website);
