@@ -18,9 +18,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class DoctorService {
-
     private static final String TAG = "error";
-
     public static void findDoctors(String name, String query, Callback callback) {
         OkHttpClient client = new OkHttpClient.Builder().build();
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.BETTER_DOCTOR_BASE_URL).newBuilder();
@@ -28,11 +26,9 @@ public class DoctorService {
         urlBuilder.addQueryParameter(Constants.BETTER_DOCTOR_QUERY_PARAMETER, query);
         urlBuilder.addQueryParameter(Constants.API_QUERY_PARAMETER, Constants.APIKEY);
         String url = urlBuilder.build().toString();
-
         Request request = new Request.Builder()
                 .url(url)
                 .build();
-
         Call call = client.newCall(request);
         call.enqueue(callback);
     }
@@ -61,16 +57,10 @@ public class DoctorService {
                     String firstName = profile.getString("first_name");
                     String lastName = profile.getString("last_name");
                     String imageUrl = profile.getString("image_url");
-
-                        //trying to get null profile pictures to display default picture
-//                        if (imageUrl.equals(null)) {
-//                            imageUrl = ("http://www.vectorea.com/tvx_uploads/4/661-medical-icons.jpg").toString();
-//                        }
                     String bio = profile.optString("bio");
                     String gender = profile.optString("gender");
                         String website = aPractice.optString("doctors_pagination_url");
                         String Name = firstName + " " + lastName;
-
                     Doctor doctorConstructor = new Doctor(Name, imageUrl, bio, gender, Address, website);
                     doctors.add(doctorConstructor);
                     }

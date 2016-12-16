@@ -20,8 +20,6 @@ public class JacksonContact extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jackson_contact);
         ButterKnife.bind(this);
-
-
         mPhoneNumberTextView.setOnClickListener(this);
     }
     @Override

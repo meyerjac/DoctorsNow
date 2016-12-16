@@ -25,13 +25,15 @@ import butterknife.ButterKnife;
 
 public class CreateAccountActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = "hello";
-
     @Bind(R.id.createUserButton) Button mCreateUserButton;
     @Bind(R.id.nameEditText)
     EditText mNameEditText;
-    @Bind(R.id.emailEditText) EditText mEmailEditText;
-    @Bind(R.id.passwordEditText) EditText mPasswordEditText;
-    @Bind(R.id.confirmPasswordEditText) EditText mConfirmPasswordEditText;
+    @Bind(R.id.emailEditText)
+    EditText mEmailEditText;
+    @Bind(R.id.passwordEditText)
+    EditText mPasswordEditText;
+    @Bind(R.id.confirmPasswordEditText)
+    EditText mConfirmPasswordEditText;
     @Bind(R.id.loginTextView)
     TextView mLoginTextView;
 
@@ -45,13 +47,10 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
         ButterKnife.bind(this);
-
         mLoginTextView.setOnClickListener(this);
         mCreateUserButton.setOnClickListener(this);
         createAuthStateListener();
         mAuth = FirebaseAuth.getInstance();
-
-
         createAuthProgressDialog();
     }
 
@@ -60,7 +59,6 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
             mAuthProgressDialog.setTitle("Loading...");
             mAuthProgressDialog.setMessage("Authenticating with Firebase...");
             mAuthProgressDialog.setCancelable(false);
-
     }
 
     @Override
@@ -79,14 +77,13 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onClick(View view) {
-
         if (view == mLoginTextView) {
             Intent intent = new Intent(CreateAccountActivity.this, LoginActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();
-        } if (view == mCreateUserButton) {
-            createNewUser();
+            } if (view == mCreateUserButton) {
+                createNewUser();
         }
     }
 
@@ -94,7 +91,6 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         UserProfileChangeRequest addProfileName = new UserProfileChangeRequest.Builder()
                 .setDisplayName(mName)
                 .build();
-
         user.updateProfile(addProfileName)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
@@ -112,22 +108,17 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         String password = mPasswordEditText.getText().toString().trim();
         String confirmPassword = mConfirmPasswordEditText.getText().toString().trim();
         mName = mNameEditText.getText().toString().trim();
-
         boolean validEmail = isValidEmail(email);
         boolean validName = isValidName(name);
         boolean validPassword = isValidPassword(password, confirmPassword);
         if (!validEmail || !validName || !validPassword) return;
         mAuthProgressDialog.show();
-
-
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
 
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-
                 mAuthProgressDialog.dismiss();
-
                 if (task.isSuccessful()) {
                     Log.d(TAG, "Authentication successful");
                     createFirebaseUserProfile(task.getResult().getUser());

@@ -28,8 +28,8 @@ public class LoginActivity extends AppCompatActivity implements SensorEventListe
     private GestureDetector mGestureDetector;
     @Bind(R.id.emailEditText)
     EditText mEmailEditText;
-    @Bind(R.id.passwordEditText) EditText mPasswordEditText;
-
+    @Bind(R.id.passwordEditText)
+    EditText mPasswordEditText;
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -40,7 +40,6 @@ public class LoginActivity extends AppCompatActivity implements SensorEventListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-
         mAuth = FirebaseAuth.getInstance();
         createAuthProgressDialog();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -70,14 +69,12 @@ public class LoginActivity extends AppCompatActivity implements SensorEventListe
             }
 
             public void onSwipeRight() {
-
             }
 
             public void onSwipeLeft() {
             }
         };
         mGestureDetector = new GestureDetector(this, custom_gesture_detector);
-
     }
 
 

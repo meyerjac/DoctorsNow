@@ -39,18 +39,15 @@ public class DoctorListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctors);
         ButterKnife.bind(this);
-
         Intent intent = getIntent();
         String mName = intent.getStringExtra("name");
         String mQuery = intent.getStringExtra("query");
         getDoctors(mName, mQuery);
-
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mRecentQuery = mSharedPreferences.getString(Constants.PREFERENCES_QUERY_KEY, null);
         if (mRecentQuery != null) {
             getDoctors(mQuery, mName);
         }
-
     }
 
 

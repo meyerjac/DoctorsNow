@@ -29,8 +29,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.savedDoctorsButton)
     Button mSavedDoctorsButton;
 
-
-
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
@@ -41,9 +39,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
         mFirstContinueButton.setOnClickListener(this);
         mSavedDoctorsButton.setOnClickListener(this);
-
-
-
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override

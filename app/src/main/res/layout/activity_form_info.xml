@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="fill the form and discover doctors from all over!"
+        android:text="fill the form and swipe to find awesome doctors in the U.S!"
         android:id="@+id/textView5"
         android:textSize="25dp"
         android:layout_marginTop="12dp"
@@ -38,7 +38,7 @@
  />
 
     <EditText
-        android:hint="Enter a Medical Keyword"
+        android:hint="Enter Medical Query"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/queryInput"
@@ -47,6 +47,7 @@
         android:paddingBottom="20dp"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
+        android:textSize="25dp"
         android:layout_above="@+id/secondPageButton"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
@@ -62,7 +63,7 @@
         android:paddingBottom="20dp"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
-        android:textSize="20dp"
+        android:textSize="25dp"
         android:layout_marginTop="56dp"
         android:layout_below="@+id/textView5"
         android:layout_alignParentRight="true"
@@ -86,7 +87,6 @@
         android:id="@+id/Or"
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
         android:textSize="36sp"
-
         android:layout_alignTop="@+id/space"
         android:layout_centerHorizontal="true" />
 

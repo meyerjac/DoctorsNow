@@ -21,10 +21,8 @@ public class DoctorDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_detail);
         ButterKnife.bind(this);
-
         mDoctors = Parcels.unwrap(getIntent().getParcelableExtra("doctors"));
         int startingPosition = Integer.parseInt(getIntent().getStringExtra("position"));
-
         adapterViewPager = new DoctorPagerAdapter(getSupportFragmentManager(), mDoctors);
         mViewPager.setAdapter(adapterViewPager);
         mViewPager.setCurrentItem(startingPosition);

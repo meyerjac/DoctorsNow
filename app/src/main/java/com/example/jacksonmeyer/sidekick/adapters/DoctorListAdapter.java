@@ -9,12 +9,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.example.jacksonmeyer.sidekick.R;
 import com.example.jacksonmeyer.sidekick.models.Doctor;
 import com.example.jacksonmeyer.sidekick.ui.DoctorDetailActivity;
 import com.squareup.picasso.Picasso;
+
 import org.parceler.Parcels;
+
 import java.util.ArrayList;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -26,8 +30,6 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Do
         mContext = context;
         mDoctors = doctors;
     }
-
-
 
     @Override
     public DoctorListAdapter.DoctorViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -50,34 +52,28 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Do
     public class DoctorViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private static final int MAX_WIDTH = 200;
         private static final int MAX_HEIGHT = 200;
+        private Context mContext;
         @Bind(R.id.doctorImageView) ImageView mDoctorImageView;
         @Bind(R.id.doctorName) TextView mDoctorName;
         @Bind(R.id.bio) TextView mBio;
         @Bind(R.id.gender) TextView mGender;
 
-        private Context mContext;
-
-
         public DoctorViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-
-
             mContext = itemView.getContext();
             itemView.setOnClickListener(this);
         }
-        public void bindDoctor(Doctor doctor) {
 
+        public void bindDoctor(Doctor doctor) {
+            mDoctorName.setText(doctor.getName());
+            mBio.setText(doctor.getBio());
+            mGender.setText(doctor.getGender());
             Picasso.with(mContext)
                     .load(doctor.getImage_url())
                     .resize(MAX_WIDTH, MAX_HEIGHT)
                     .centerCrop()
                     .into(mDoctorImageView);
-
-
-            mDoctorName.setText(doctor.getName());
-            mBio.setText(doctor.getBio());
-            mGender.setText(doctor.getGender());
         }
 
             @Override
@@ -88,8 +84,6 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Do
                 intent.putExtra("position", itemPosition + "");
                 intent.putExtra("doctors", Parcels.wrap(mDoctors));
                 mContext.startActivity(intent);
-
-
             }
         }
     }

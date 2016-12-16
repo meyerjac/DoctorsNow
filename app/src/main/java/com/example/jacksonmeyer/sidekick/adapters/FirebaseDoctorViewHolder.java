@@ -6,7 +6,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-
 import com.example.jacksonmeyer.sidekick.Constants;
 import com.example.jacksonmeyer.sidekick.R;
 import com.example.jacksonmeyer.sidekick.models.Doctor;
@@ -16,11 +15,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import org.parceler.Parcels;
-
 import java.util.ArrayList;
-
 import butterknife.Bind;
 
 public class FirebaseDoctorViewHolder  extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -28,10 +24,9 @@ public class FirebaseDoctorViewHolder  extends RecyclerView.ViewHolder implement
     public static final String TAG = "TAG";
         private static final int MAX_WIDTH = 200;
         private static final int MAX_HEIGHT = 200;
-
         View mView;
         Context mContext;
-    final ArrayList<Doctor> doctor = new ArrayList<>();
+        final ArrayList<Doctor> doctor = new ArrayList<>();
 
         public FirebaseDoctorViewHolder(View itemView) {
         super(itemView);
@@ -50,13 +45,8 @@ public class FirebaseDoctorViewHolder  extends RecyclerView.ViewHolder implement
         TextView bioTextView = (TextView) mView.findViewById(R.id.bioTextView);
         TextView genderTextView = (TextView) mView.findViewById(R.id.genderTextView);
 
-
-
-
         Log.d(TAG, "doctorname" + doctor.getName());
-
         nameTextView.setText(doctor.getName());
-
         bioTextView.setText(doctor.getBio());
         genderTextView.setText(doctor.getGender());
 //        Picasso.with(mContext)
@@ -80,12 +70,10 @@ public class FirebaseDoctorViewHolder  extends RecyclerView.ViewHolder implement
                 }
 
                 int itemPosition = getLayoutPosition();
-
                 Intent intent = new Intent(mContext, DoctorDetailActivity.class);
                 intent.putExtra("position", itemPosition + "");
                 intent.putExtra("doctors", Parcels.wrap(doctors));
                 Log.d(TAG, "onDataChange: " + doctors);
-
                 mContext.startActivity(intent);
             }
 

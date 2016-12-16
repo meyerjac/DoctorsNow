@@ -9,7 +9,6 @@ import java.util.ArrayList;
 
 public class DoctorPagerAdapter extends FragmentPagerAdapter {
     private ArrayList<Doctor> mDoctors;
-
     public DoctorPagerAdapter(FragmentManager fm, ArrayList<Doctor> doctors) {
         super(fm);
         mDoctors = doctors;

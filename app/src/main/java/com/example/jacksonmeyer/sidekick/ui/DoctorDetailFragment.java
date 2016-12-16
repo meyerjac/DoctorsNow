@@ -24,14 +24,20 @@ import butterknife.ButterKnife;
 public class DoctorDetailFragment extends Fragment implements View.OnClickListener{
     private static final int MAX_WIDTH = 300;
     private static final int MAX_HEIGHT = 200;
-    @Bind(R.id.doctorImageView) ImageView mImageLabel;
-    @Bind(R.id.doctorNameTextView) TextView mNameLabel;
-    @Bind(R.id.bioTextView) TextView mBioLabel;
-    @Bind(R.id.genderTextView) TextView mGenderLabel;
-    @Bind(R.id.websiteTextView) TextView mWebsiteLabel;
-    @Bind(R.id.addressTextView) TextView mAddressLabel;
-    @Bind(R.id.saveDoctorButton) TextView mSaveDoctorButton;
-
+    @Bind(R.id.doctorImageView)
+    ImageView mImageLabel;
+    @Bind(R.id.doctorNameTextView)
+    TextView mNameLabel;
+    @Bind(R.id.bioTextView)
+    TextView mBioLabel;
+    @Bind(R.id.genderTextView)
+    TextView mGenderLabel;
+    @Bind(R.id.websiteTextView)
+    TextView mWebsiteLabel;
+    @Bind(R.id.addressTextView)
+    TextView mAddressLabel;
+    @Bind(R.id.saveDoctorButton)
+    TextView mSaveDoctorButton;
     private Doctor mDoctor;
 
     public static DoctorDetailFragment newInstance(Doctor doctor) {
@@ -67,10 +73,7 @@ public class DoctorDetailFragment extends Fragment implements View.OnClickListen
 
         mWebsiteLabel.setOnClickListener(this);
         mSaveDoctorButton.setOnClickListener(this);
-
         return view;
-
-
     }
 
     @Override
