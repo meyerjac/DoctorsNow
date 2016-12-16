@@ -35,7 +35,6 @@ public class FormInfoActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         mSearchedNameReference = FirebaseDatabase
                 .getInstance()
                 .getReference()
