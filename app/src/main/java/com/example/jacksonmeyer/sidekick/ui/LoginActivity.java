@@ -136,14 +136,11 @@ public class LoginActivity extends AppCompatActivity implements SensorEventListe
         }
     }
 
-
     @Override
     public void onSensorChanged(SensorEvent event) {
-
     }
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
     }
 
     @Override

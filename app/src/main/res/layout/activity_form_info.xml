@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_form_info"
     android:layout_width="match_parent"
@@ -12,63 +13,6 @@
     tools:context="com.example.jacksonmeyer.sidekick.ui.FormInfoActivity">
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="fill the form and swipe to find awesome doctors in the U.S!"
-        android:id="@+id/textView5"
-        android:textSize="25dp"
-        android:layout_marginTop="12dp"
-        />
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Find your doctors"
-        android:id="@+id/secondPageButton"
-        android:layout_marginBottom="34dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:background="@color/colorPrimaryIcon"
- />
-
-    <EditText
-        android:hint="Enter Medical Query"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/queryInput"
-        android:paddingTop="20dp"
-        android:background="@color/colorAccent"
-        android:paddingBottom="20dp"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
-        android:textSize="25dp"
-        android:layout_above="@+id/secondPageButton"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="58dp" />
-
-    <EditText
-        android:hint="Enter Doctor Name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/nameInput"
-        android:paddingTop="20dp"
-        android:background="@color/colorAccent"
-        android:paddingBottom="20dp"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
-        android:textSize="25dp"
-        android:layout_marginTop="56dp"
-        android:layout_below="@+id/textView5"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
     <Space
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -80,15 +24,78 @@
         android:layout_marginTop="26dp"
         android:id="@+id/space" />
 
+
     <TextView
-        android:text="AND"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/Or"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
-        android:textSize="36sp"
-        android:layout_alignTop="@+id/space"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="fill ot the fields and swipe up to find awesome doctors!"
+        android:id="@+id/textView5"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:layout_marginTop="23dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/arrowup"
+        android:layout_marginBottom="43dp"
+        android:id="@+id/imageView4"
+        android:layout_above="@+id/nameInput"
+        android:layout_alignLeft="@+id/imageView3"
+        android:layout_alignStart="@+id/imageView3" />
+
+    <EditText
+        android:hint="Enter Medical Query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/queryInput"
+        android:paddingTop="20dp"
+        android:background="@color/colorAccent"
+        android:paddingBottom="20dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:textSize="26dp"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/arrowup"
+
+        android:id="@+id/imageView3"
+        android:layout_below="@+id/textView5"
         android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:hint="Enter Doctor Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameInput"
+        android:paddingTop="20dp"
+        android:background="@color/colorAccent"
+        android:paddingBottom="20dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:textSize="26dp"
+        android:layout_marginBottom="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/arrowup"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:id="@+id/imageView5" />
 
 </RelativeLayout>
 
