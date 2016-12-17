@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.widget.EditText;
-
 import com.example.jacksonmeyer.sidekick.Constants;
 import com.example.jacksonmeyer.sidekick.R;
 import com.example.jacksonmeyer.sidekick.util.Android_Gesture_Detector;

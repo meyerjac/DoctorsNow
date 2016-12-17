@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.example.jacksonmeyer.sidekick.Constants;
 import com.example.jacksonmeyer.sidekick.R;
 import com.example.jacksonmeyer.sidekick.models.Doctor;
@@ -15,9 +17,15 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
 import org.parceler.Parcels;
+
 import java.util.ArrayList;
+
 import butterknife.Bind;
+
+import static com.example.jacksonmeyer.sidekick.R.id.doctorImageView;
 
 public class FirebaseDoctorViewHolder  extends RecyclerView.ViewHolder implements View.OnClickListener {
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
@@ -41,19 +49,21 @@ public class FirebaseDoctorViewHolder  extends RecyclerView.ViewHolder implement
 
     public void bindDoctor(Doctor doctor) {
         Log.d(TAG, "bindDoctor: " + doctor);
-        TextView nameTextView = (TextView) mView.findViewById(R.id.doctorNameTextView);
-        TextView bioTextView = (TextView) mView.findViewById(R.id.bioTextView);
-        TextView genderTextView = (TextView) mView.findViewById(R.id.genderTextView);
+        TextView nameTextView = (TextView) mView.findViewById(R.id.doctorName);
+        TextView bioTextView = (TextView) mView.findViewById(R.id.bio);
+        TextView genderTextView = (TextView) mView.findViewById(R.id.gender);
+        ImageView DoctorImageView = (ImageView) mView.findViewById(doctorImageView);
 
         Log.d(TAG, "doctorname" + doctor.getName());
         nameTextView.setText(doctor.getName());
         bioTextView.setText(doctor.getBio());
         genderTextView.setText(doctor.getGender());
-//        Picasso.with(mContext)
-//                .load(doctor.getImage_url())
-//                .resize(MAX_WIDTH, MAX_HEIGHT)
-//                .into(doctorImageView);
-//        Log.d(TAG, "bindDoctor: " + doctor);
+        Picasso.with(mContext)
+                .load(doctor.getImage_url())
+                .resize(MAX_WIDTH, MAX_HEIGHT)
+                .into(DoctorImageView);
+
+        Log.d(TAG, "bindDoctor: " + doctor);
     }
 
     @Override

@@ -28,21 +28,22 @@ public class DoctorListActivity extends AppCompatActivity {
     @Bind(R.id.recyclerView)
     RecyclerView mRecyclerView;
     private DoctorListAdapter mAdapter;
-    private String mName;
-    private String mQuery;
+
     public ArrayList<Doctor> mDoctors = new ArrayList<>();
     private SharedPreferences mSharedPreferences;
     private String mRecentQuery;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        String mName;
+        String mQuery;
         overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctors);
         ButterKnife.bind(this);
         Intent intent = getIntent();
-        String mName = intent.getStringExtra("name");
-        String mQuery = intent.getStringExtra("query");
+        mName = intent.getStringExtra("name");
+        mQuery = intent.getStringExtra("query");
         getDoctors(mName, mQuery);
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mRecentQuery = mSharedPreferences.getString(Constants.PREFERENCES_QUERY_KEY, null);

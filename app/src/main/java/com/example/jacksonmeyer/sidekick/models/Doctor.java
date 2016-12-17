@@ -5,48 +5,48 @@ import org.parceler.Parcel;
 
 @Parcel
 public class Doctor {
-    String Name;
-    String Image_url;
-    String Bio;
-    String Gender;
-    String Address;
-    String Website;
+    String name;
+    String image_url;
+    String bio;
+    String gender;
+    String address;
+    String website;
 
     public Doctor() {
     }
 
     public Doctor(String Name, String Image_url, String Bio, String Gender, String Address, String Website) {
-        this.Name = Name;
-        this.Image_url = Image_url;
-        this.Bio = Bio;
-        this.Gender = Gender;
-        this.Address = Address;
-        this.Website = Website;
+        this.name = Name;
+        this.image_url = Image_url;
+        this.bio = Bio;
+        this.gender = Gender;
+        this.address = Address;
+        this.website = Website;
 
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public String getImage_url() {
-        return Image_url;
+        return image_url;
     }
 
     public String getBio() {
-        return Bio;
+        return bio;
     }
 
     public String getGender() {
-        return Gender;
+        return gender;
     }
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
     public String getWebsite() {
-        return Website;
+        return website;
     }
 }
 
