@@ -11,8 +11,11 @@ import com.example.jacksonmeyer.sidekick.R;
 import com.example.jacksonmeyer.sidekick.adapters.FirebaseDoctorViewHolder;
 import com.example.jacksonmeyer.sidekick.models.Doctor;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -29,8 +32,10 @@ public class SavedDoctorListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctors);
         ButterKnife.bind(this);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+        mDoctorReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_SAVED_DOCTORS).child(uid);
 
-        mDoctorReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_SAVED_DOCTORS);
         setUpFirebaseAdapter();
         Log.d(TAG, "onCreate: " + mDoctorReference);
     }

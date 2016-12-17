@@ -14,10 +14,14 @@ import android.widget.Toast;
 import com.example.jacksonmeyer.sidekick.Constants;
 import com.example.jacksonmeyer.sidekick.R;
 import com.example.jacksonmeyer.sidekick.models.Doctor;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
+
 import org.parceler.Parcels;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -83,7 +87,10 @@ public class DoctorDetailFragment extends Fragment implements View.OnClickListen
                     Uri.parse(mDoctor.getWebsite()));
             startActivity(webIntent);
         } if (v == mSaveDoctorButton) {
-            DatabaseReference doctorRef = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_SAVED_DOCTORS);
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
+            DatabaseReference doctorRef = FirebaseDatabase.getInstance().getReference
+                    (Constants.FIREBASE_CHILD_SAVED_DOCTORS).child(uid);
             doctorRef.push().setValue(mDoctor);
             Toast.makeText(getContext(), "Saved", Toast.LENGTH_LONG).show();
         }

@@ -42,27 +42,33 @@ public class DoctorService {
                 JSONArray doctorsResults = results.getJSONArray("data");
                 for (int i = 0; i < doctorsResults.length(); i++) {
                     JSONObject doctor = doctorsResults.getJSONObject(i);
-                    JSONArray practices = doctor.getJSONArray("practices");
-                    for (int j = 0; j < 1; j++) {
-                        JSONObject aPractice = practices.getJSONObject(j);
-                        JSONObject addressJSON = practices.getJSONObject(j).getJSONObject("visit_address");
-                        String address = "";
-                        String city = addressJSON.getString("city");
-                        String state = addressJSON.getString("state");
-                        String street = addressJSON.getString("street");
-                        String zip = addressJSON.getString("zip");
-                        String Address = address + street + "\n" + city + ", " + state + " " + zip;
 
-                    JSONObject profile = doctor.getJSONObject("profile");
-                    String firstName = profile.getString("first_name");
-                    String lastName = profile.getString("last_name");
-                    String imageUrl = profile.getString("image_url");
-                    String bio = profile.optString("bio");
-                    String gender = profile.optString("gender");
-                        String website = aPractice.optString("doctors_pagination_url");
-                        String Name = firstName + " " + lastName;
-                    Doctor doctorConstructor = new Doctor(Name, imageUrl, bio, gender, Address, website);
-                    doctors.add(doctorConstructor);
+
+                    try {
+                        JSONArray practices = doctor.getJSONArray("practices");
+                        for (int j = 0; j < 1; j++) {
+                            JSONObject aPractice = practices.getJSONObject(j);
+                            JSONObject addressJSON = practices.getJSONObject(j).getJSONObject("visit_address");
+                            String address = "";
+                            String city = addressJSON.getString("city");
+                            String state = addressJSON.getString("state");
+                            String street = addressJSON.getString("street");
+                            String zip = addressJSON.getString("zip");
+                            String Address = address + street + "\n" + city + ", " + state + " " + zip;
+
+                            JSONObject profile = doctor.getJSONObject("profile");
+                            String firstName = profile.getString("first_name");
+                            String lastName = profile.getString("last_name");
+                            String imageUrl = profile.getString("image_url");
+                            String bio = profile.optString("bio");
+                            String gender = profile.optString("gender");
+                            String website = aPractice.optString("doctors_pagination_url");
+                            String Name = firstName + " " + lastName;
+                            Doctor doctorConstructor = new Doctor(Name, imageUrl, bio, gender, Address, website);
+                            doctors.add(doctorConstructor);
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
                 }
             }
