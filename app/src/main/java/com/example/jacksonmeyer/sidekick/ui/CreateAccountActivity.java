@@ -52,7 +52,9 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         createAuthStateListener();
         mAuth = FirebaseAuth.getInstance();
         createAuthProgressDialog();
+
     }
+
 
     private void createAuthProgressDialog() {
             mAuthProgressDialog = new ProgressDialog(this);
