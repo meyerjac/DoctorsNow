@@ -76,12 +76,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (id == R.id.contactMe) {
             navigateToContactPage();
             return true;
+        } if (id == R.id.aboutThisApp) {
+            navigateToAboutPage();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
     private void navigateToContactPage() {
         Intent intent = new Intent(MainActivity.this, JacksonContact.class);
+        startActivity(intent);
+    }
+
+    private void navigateToAboutPage() {
+        Intent intent = new Intent(MainActivity.this, About.class);
         startActivity(intent);
     }
 

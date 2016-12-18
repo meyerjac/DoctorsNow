@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbarSize="12dip"
+    android:background="@color/colorPrimary">
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="10sp">
+
+        <TextView
+            android:id="@+id/bullet1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="3sp"
+            android:layout_marginTop="20dp"
+            android:text="• Thank you for using my app to find your perfect doctor. There are a few things you should know, please see below"
+            android:textSize="15sp"
+            android:textColor="#ffffff"
+            android:layout_below="@+id/body_text3"
+            android:layout_marginLeft="25dp" />
+        <TextView
+            android:id="@+id/bullet2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="3sp"
+            android:layout_marginTop="20dp"
+            android:textColor="#ffffff"
+            android:text="•  You have your swipe listeners on the login and form entry page."
+            android:textSize="15sp"
+            android:layout_below="@+id/bullet1"
+            android:layout_marginLeft="25dp" />
+        <TextView
+            android:id="@+id/bullet3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="3sp"
+            android:layout_marginTop="20dp"
+            android:textColor="#ffffff"
+            android:text="• Then you have your animations on my splash screen and my API search, it's a swipe listener"
+            android:textSize="15sp"
+            android:layout_below="@+id/bullet2"
+            android:layout_marginLeft="25dp" />
+        <TextView
+            android:id="@+id/bullet4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="3sp"
+            android:textColor="#ffffff"
+            android:layout_marginTop="20dp"
+            android:text="• Then, you have a search widget on the Doctor List activity, and my alternative resource acan be seen by turning the phone landscape on the login or the creat account activities"
+            android:textSize="15sp"
+            android:layout_below="@+id/bullet3"
+            android:layout_marginLeft="25dp" />
+
+        <TextView
+            android:id="@+id/body_text3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="3sp"
+            android:text="ABOUT"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+
+</ScrollView>
