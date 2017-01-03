@@ -1,6 +1,6 @@
-# _Application name: SIDEK!CK_
+# _Application name: DoctorsNow_
 
-#### _this application is a platform for anybody to find local specialist doctors, 11/26/2016_
+#### _this application is a platform for anybody to find doctors by name and specialty, 11/26/2016_
 
 #### By _**Jackson Meyer**_
 
